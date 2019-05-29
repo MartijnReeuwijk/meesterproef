@@ -21,3 +21,22 @@ const express = require("express"),
   http.listen(port, () => {
     console.log(port);
   });
+
+function getData(id){
+  return new Promise((resolve, reject) => {
+    const vidID = id || 1001004 ;
+    const url = "https://openbeelden.nl/feeds/oai/?verb=GetRecord&identifier=oai:openimages.eu:" + vidID + "&metadataPrefix=oai_dc";
+    console.log(vidID);
+    console.log(url);
+    request(url, function(error, response, body){
+      console.log(body);
+      let videoMetaData = JSON.parse(body);
+      console.log("error:", error);
+      console.log("statusCode:", response && response.statusCode);
+      resolve(videoMetaData);
+      reject(this.statusText);
+    })
+  })
+}
+
+getData();
