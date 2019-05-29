@@ -3,7 +3,6 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   app = express(),
   http = require("http").Server(app),
-  io = require("socket.io")(http),
   port = process.env.PORT || 5000,
   fs = require("fs"),
   rp = require("request-promise");
@@ -17,4 +16,8 @@ const express = require("express"),
     extended: true
   }))
 
-  .get("/", function );
+  // .get("/", function );
+
+  http.listen(port, () => {
+    console.log(port);
+  });
