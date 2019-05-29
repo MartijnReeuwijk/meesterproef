@@ -4,6 +4,7 @@ const express = require("express"),
   app = express(),
   http = require("http").Server(app),
   port = process.env.PORT || 5000,
+  xmlParser = require('xml2json'),
   fs = require("fs"),
   rp = require("request-promise");
 
@@ -29,11 +30,9 @@ function getData(id){
     console.log(vidID);
     console.log(url);
     request(url, function(error, response, body){
-      console.log(body);
-      let videoMetaData = JSON.parse(body);
-      console.log("error:", error);
-      console.log("statusCode:", response && response.statusCode);
-      resolve(videoMetaData);
+      let dataJson = JSON.parse(xmlParser.toJson(body));
+      console.log(dataJson);
+      resolve(dataJson);
       reject(this.statusText);
     })
   })
