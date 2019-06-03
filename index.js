@@ -5,24 +5,32 @@ const express = require("express"),
   app = express(),
   http = require("http").Server(app),
   port = process.env.PORT || 5000,
-  xmlParser = require('xml2json'),
+  xmlParser = require("xml2json"),
   fs = require("fs"),
+  Filehound = require("filehound"),
   rp = require("request-promise");
 
-  app
+app
   .set("view engine", "ejs")
   .set("views", "views")
-
   .use(express.static("static/"))
-  .use(bodyParser.urlencoded({
-    extended: true
-  }))
+  .use(
+    bodyParser.urlencoded({
+      extended: true
+    })
+  )
 
-  // .get("/", function );
+  .get("/", firstRandom);
 
-  http.listen(port, () => {
-    console.log(`[server] listening on port ${port}`);
+http.listen(port, () => {
+  console.log(port);
+});
+
+function firstRandom(req, res) {
+  res.render("index.ejs", {
+    // clips: numberArray
   });
+}
 
 function getData(id){
   return new Promise(async (resolve, reject) => {
