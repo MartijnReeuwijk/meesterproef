@@ -6,12 +6,12 @@ const express = require("express"),
   port = process.env.PORT || 5000,
   xmlParser = require("xml2json"),
   fs = require("fs"),
+  Filehound = require("filehound"),
   rp = require("request-promise");
 
 app
   .set("view engine", "ejs")
   .set("views", "views")
-
   .use(express.static("static/"))
   .use(
     bodyParser.urlencoded({
@@ -25,9 +25,30 @@ http.listen(port, () => {
   console.log(port);
 });
 
-function firstRandom(req, res) {
+// Chagne this code
+function getRandomNames() {
+  return new Promise(function(resolve, reject) {
+    let imagePath = [];
+    Filehound.create()
+      .path("./static/images/thumbnails/thumbnails_large/")
+      .directory() // only search for directories
+      .find()
+      .then(subdirectories => {
+        for (let i = 0; i < 9; i++) {
+          imagePath.push(subdirectories[i].match(/\d+/g).map(Number));
+          // .replace(/\s/g, '')
+        }
+        resolve(imagePath);
+      });
+  });
+}
+
+async function firstRandom(req, res) {
+
+  let randomNames = await getRandomNames();
+  console.log(randomNames.lenght);
   res.render("index.ejs", {
-    // nog geen data nodig voor basic
+    clips: randomNames
   });
 }
 
@@ -39,6 +60,8 @@ function firstRandom(req, res) {
 // });
 //
 //   }
+
+// oke need to get the Data from the array of maps in map data.
 
 function getData(id) {
   return new Promise((resolve, reject) => {
@@ -57,3 +80,4 @@ function getData(id) {
 }
 
 getData();
+// getRandomNames();
