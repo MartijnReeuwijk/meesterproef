@@ -25,43 +25,11 @@ http.listen(port, () => {
   console.log(port);
 });
 
-// Chagne this code
-function getRandomNames() {
-  return new Promise(function(resolve, reject) {
-    let imagePath = [];
-    Filehound.create()
-      .path("./static/images/thumbnails/thumbnails_large/")
-      .directory() // only search for directories
-      .find()
-      .then(subdirectories => {
-        for (let i = 0; i < 9; i++) {
-          imagePath.push(subdirectories[i].match(/\d+/g).map(Number));
-          // .replace(/\s/g, '')
-        }
-        resolve(imagePath);
-      });
-  });
-}
-
-async function firstRandom(req, res) {
-
-  let randomNames = await getRandomNames();
-  console.log(randomNames.lenght);
+function firstRandom(req, res) {
   res.render("index.ejs", {
-    clips: randomNames
+    // clips: numberArray
   });
 }
-
-// async function firstRandom(req, res) {
-//     // let clips = await clipData();
-//     res.render("index.ejs", {
-//       // clips: clips["results"]
-//       // await the api call
-// });
-//
-//   }
-
-// oke need to get the Data from the array of maps in map data.
 
 function getData(id) {
   return new Promise((resolve, reject) => {
@@ -80,4 +48,3 @@ function getData(id) {
 }
 
 getData();
-// getRandomNames();
