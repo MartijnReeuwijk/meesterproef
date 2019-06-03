@@ -25,6 +25,8 @@ http.listen(port, () => {
   console.log(port);
 });
 
+const firstLoadNumberArray = ["1000452","1000836","1000986","1001158","1001176","1001466","1001487","1001533","1001563","1001741","1001766","1001921","1002043","1002054","10021","1002986","1003237"]
+
 function firstRandom(req, res) {
   res.render("index.ejs", {
     // clips: numberArray
