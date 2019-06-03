@@ -1,4 +1,5 @@
 const express = require("express"),
+  fetch = require("node-fetch"),
   request = require("request"),
   bodyParser = require("body-parser"),
   app = express(),
@@ -33,20 +34,24 @@ function firstRandom(req, res) {
   });
 }
 
-function getData(id) {
-  return new Promise((resolve, reject) => {
-    const vidID = id;
-    const url =
-      "https://openbeelden.nl/feeds/oai/?verb=GetRecord&identifier=oai:openimages.eu:" +
-      vidID +
-      "&metadataPrefix=oai_dc";
-    request(url, function(error, response, body) {
-      let dataJson = JSON.parse(xmlParser.toJson(body));
-      console.log(dataJson);
-      resolve(dataJson);
-      reject(this.statusText);
-    });
-  });
+function getData(id){
+  return new Promise(async (resolve, reject) => {
+    const vidID = id || 1001004 ;
+    const url = "https://openbeelden.nl/feeds/oai/?verb=GetRecord&identifier=oai:openimages.eu:" + vidID + "&metadataPrefix=oai_dc";
+
+    try {
+      const res = await fetch(url);
+      const xml = await res.text();
+
+      const data = xmlParser.toJson(xml);
+
+      resolve(data);
+    } catch(err) {
+      reject(err);
+    }
+  })
 }
 
-getData();
+getData()
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
