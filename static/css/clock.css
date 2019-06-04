@@ -1,0 +1,8 @@
+.timeHolder{
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
