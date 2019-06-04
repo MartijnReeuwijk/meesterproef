@@ -21,6 +21,7 @@ app
 
   .get("/", index)
   .get("/data", sendData)
+  .get("/semia/:id", detail)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`));
 
@@ -32,8 +33,17 @@ async function index(req, res) {
   });
 }
 
+function detail(req, res) {
+  const urlParts = req.url.split("/");
+  const img = urlParts[urlParts.length - 1];
+
+  res.render("detail", {
+    prevImg: img
+  });
+}
+
 function sendData(req, res) {
-  res.json(dataArray)
+  res.json(dataArray);
 }
 
 function randomImages(){
