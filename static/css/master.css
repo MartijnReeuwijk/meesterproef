@@ -11,7 +11,7 @@
   margin: 15px 15px 7px;
   /* padding: 5px; */
   /* Margin and padding need to be the same as the width -px */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: calc(33% -  40px);
   height: calc(33vh - 40px);
 }
