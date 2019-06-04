@@ -1,14 +1,12 @@
 const express = require("express"),
   fetch = require("node-fetch"),
-  request = require("request"),
   bodyParser = require("body-parser"),
   app = express(),
   http = require("http").Server(app),
   port = process.env.PORT || 5000,
   xmlParser = require("xml2json"),
   fs = require("fs"),
-  Filehound = require("filehound"),
-  rp = require("request-promise");
+  DataArray = require('./static/array.js');
 
 app
   .set("view engine", "ejs")
@@ -26,11 +24,21 @@ http.listen(port, () => {
   console.log(port);
 });
 
-const firstLoadNumberArray = ["1000452","1000836","1000986","1001158","1001176","1001466","1001487","1001533","1001563","1001741","1001766","1001921","1002043","1002054","10021","1002986","1003237"]
 
-function firstRandom(req, res) {
+function firstLoadNumberFunction(){
+  let homePageImagesArray = []
+
+  for (let i = 0; i < 9; i++) {
+    homePageImagesArray.push(DataArray[Math.floor(Math.random() * DataArray.length)])
+  }
+return homePageImagesArray
+}
+
+async function firstRandom(req, res) {
+  let clips = firstLoadNumberFunction()
+
   res.render("index.ejs", {
-    // clips: numberArray
+    clips: clips
   });
 }
 
