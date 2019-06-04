@@ -6,7 +6,8 @@ const express = require("express"),
   port = process.env.PORT || 5000,
   xmlParser = require("xml2json"),
   fs = require("fs"),
-  DataArray = require('./static/array.js');
+  dataArray = require('./static/array.js'),
+  openbeelden = require('./partials/openbeelden');
 
 app
   .set("view engine", "ejs")
@@ -18,45 +19,24 @@ app
     })
   )
 
-  .get("/", firstRandom)
+  .get("/", index)
   
   .listen(port, () => console.log(`[server] listening on port ${port}`));
 
-function firstLoadNumberFunction(){
-  let homePageImagesArray = []
-
-  for (let i = 0; i < 9; i++) {
-    homePageImagesArray.push(DataArray[Math.floor(Math.random() * DataArray.length)])
-  }
-return homePageImagesArray
-}
-
-async function firstRandom(req, res) {
-  let clips = firstLoadNumberFunction()
+async function index(req, res) {
+  let clips = randomImages()
 
   res.render("index.ejs", {
     clips: clips
   });
 }
 
-function getData(id){
-  return new Promise(async (resolve, reject) => {
-    const vidID = id || 1001004 ;
-    const url = "https://openbeelden.nl/feeds/oai/?verb=GetRecord&identifier=oai:openimages.eu:" + vidID + "&metadataPrefix=oai_dc";
+function randomImages(){
+  let homePageImages = []
 
-    try {
-      const res = await fetch(url);
-      const xml = await res.text();
+  for (let i = 0; i < 9; i++) {
+    homePageImages.push(dataArray[Math.floor(Math.random() * dataArray.length)])
+  }
 
-      const data = xmlParser.toJson(xml);
-
-      resolve(data);
-    } catch(err) {
-      reject(err);
-    }
-  })
+  return homePageImages
 }
-
-getData()
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
