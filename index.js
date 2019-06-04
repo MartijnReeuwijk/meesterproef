@@ -18,12 +18,9 @@ app
     })
   )
 
-  .get("/", firstRandom);
-
-http.listen(port, () => {
-  console.log(port);
-});
-
+  .get("/", firstRandom)
+  
+  .listen(port, () => console.log(`[server] listening on port ${port}`));
 
 function firstLoadNumberFunction(){
   let homePageImagesArray = []
