@@ -1,19 +1,38 @@
 <%- include('./partials/head'); -%>
+<div class="bigAssContainer">
+<!-- <button class="unfolder" type="button" name="button">men</button> -->
+<div class="timer">
+  <!-- <p>Big ole timer</p> -->
+</div>
+<div class="breadCrumbs">
+<p>x</p>
+</div>
+  <aside class="hidden">
+    <button type="button" name="button">Vorm</button>
+    <button type="button" name="button">Kleur</button>
+    <button type="button" name="button">Beweging</button>
+    <button type="button" name="button">Clutter</button>
 
-<main class="displayFlex">
+
+  </aside>
+
+  <main class="displayFlex">
 
 
-  <% for(var i = 0;  i < clips.length; i++) { %>
-    <div class="mainpageImage previewImage transition">
-      <!-- Test data but the path will be the same just change the number to the data Var -->
-      <!-- The _0.png must stay so the the app will alwaya get the first one -->
-      <!-- <img src="../images/thumbnails/thumbnails_large/1000452/1000452_0.png" alt=""> -->
-    <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
+    <% for(var i = 0;  i < clips.length; i++) { %>
+      <div class="mainpageImage previewImage transition">
+        <!-- Test data but the path will be the same just change the number to the data Var -->
+        <!-- The _0.png must stay so the the app will alwaya get the first one -->
+        <!-- <img src="../images/thumbnails/thumbnails_large/1000452/1000452_0.png" alt=""> -->
+      <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
 
-<!-- ${clips[1]}/${clips[1]} -->
-    </div>
-<% } %>
+  <!-- ${clips[1]}/${clips[1]} -->
+      </div>
+  <% } %>
 
-</main>
+  </main>
+
+</div>
+
 
 <%- include('./partials/footer'); -%>
