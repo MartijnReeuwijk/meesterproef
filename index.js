@@ -20,7 +20,8 @@ app
   )
 
   .get("/", index)
-  
+  .get("/data", sendData)
+
   .listen(port, () => console.log(`[server] listening on port ${port}`));
 
 async function index(req, res) {
@@ -29,6 +30,10 @@ async function index(req, res) {
   res.render("index.ejs", {
     clips: clips
   });
+}
+
+function sendData(req, res) {
+  res.json(dataArray)
 }
 
 function randomImages(){
