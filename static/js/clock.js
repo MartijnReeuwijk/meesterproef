@@ -47,5 +47,3 @@ function getDataArray() {
     }
   });
 }
-newRandomImage();
-placeNewImages();
