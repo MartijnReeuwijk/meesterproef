@@ -1,8 +1,26 @@
 <%- include('./partials/head'); -%>
+<div class="bigAssContainer">
+<!-- <button class="unfolder" type="button" name="button">men</button> -->
+<div class="timer">
+  <!-- <p>Big ole timer</p> -->
+</div>
+<div class="breadCrumbs">
+<p>x</p>
+</div>
+  <aside class="hidden">
+    <button type="button" name="button">Vorm</button>
+    <button type="button" name="button">Kleur</button>
+    <button type="button" name="button">Beweging</button>
+    <button type="button" name="button">Clutter</button>
+
+
+
+  </aside>
+
+  <main class="displayFlex">
+
 
 <%- include('./partials/clock'); -%>
-
-<main class="displayFlex">
 
   <% for(var i = 0;  i < clips.length; i++) { %>
     <div class="mainpageImage previewImage transition">
@@ -12,7 +30,11 @@
     </div>
 <% } %>
 
-</main>
+
+  </main>
+
+</div>
+
 
 <script src="js/selectImage.js"></script>
 
