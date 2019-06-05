@@ -61,17 +61,6 @@ function detail(req, res) {
   });
 }
 
-// function newImages(arr, j) {
-//   let newImgs = [];
-
-//   for (let i = 0; i < j; i++) {
-//     const img = arr[Math.floor(Math.random() * arr.length)];
-//     newImgs.push(img);
-//   }
-
-//   return newImgs;
-// }
-
 function sendData(req, res) {
   res.json(dataArray);
 }
