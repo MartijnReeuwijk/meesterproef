@@ -9,7 +9,7 @@ for(let i = 0; i < thumbnails.length; i++) {
     if (window.location.href.includes('/semia')) {
       window.location.href += `/${image}`;
     } else {
-      window.location.href += `semia/${image}`;
+      window.location.href += `search/${image}`;
     }
   });
 }
