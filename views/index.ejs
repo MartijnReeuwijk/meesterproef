@@ -6,13 +6,14 @@
 
   <% for(var i = 0;  i < clips.length; i++) { %>
     <div class="mainpageImage previewImage transition">
-  <!-- probs rebuild this page when we got the design since this is a kinda bad user interaction -->
-    <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
-
-<!-- ${clips[1]}/${clips[1]} -->
+      <!-- Test data but the path will be the same just change the number to the data Var -->
+      <!-- The _0.png must stay so the the app will alwaya get the first one -->
+      <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" data-image="<%= clips[i] %>" data-shot="0" alt="">
     </div>
 <% } %>
 
 </main>
+
+<script src="js/selectImage.js"></script>
 
 <%- include('./partials/footer'); -%>
