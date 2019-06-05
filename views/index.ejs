@@ -17,11 +17,10 @@
 
   </aside>
 
+
+  <%- include('./partials/clock'); -%>
+
   <main class="displayFlex">
-
-
-<%- include('./partials/clock'); -%>
-
   <% for(var i = 0;  i < clips.length; i++) { %>
     <div class="mainpageImage previewImage transition">
       <!-- Test data but the path will be the same just change the number to the data Var -->
@@ -36,6 +35,5 @@
 </div>
 
 
-<script src="js/selectImage.js"></script>
 
 <%- include('./partials/footer'); -%>

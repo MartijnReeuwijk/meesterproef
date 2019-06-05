@@ -1,14 +1,12 @@
-console.log("clock");
-
 // TODO: Make this a fancy fadeout/fadein
 setInterval(function () {
-  placeNewImages();
+  placeNewImages()
+  thumbnailsEventsListener()
 }, 5000);
 
 // TODO: All of this needs to be triggerd by a timed function
 async function placeNewImages() {
   const newImage = await newRandomImage();
-  console.log("deze", newImage);
   const html = document.getElementsByClassName("displayFlex")[0];
   // TODO: This needs to be with a create element funciton instead of this
   html.innerHTML = "";
@@ -16,7 +14,7 @@ async function placeNewImages() {
     html.innerHTML += `<div class="mainpageImage previewImage transition">
   <img src="../images/thumbnails/thumbnails_large/${elem[0]}/${
       elem[0]
-    }_0.png" alt="">
+    }_0.png" data-image="${elem[0]}" data-shot="0" alt="">
   </div>`;
   });
 }
