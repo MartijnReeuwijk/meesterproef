@@ -43,6 +43,14 @@ function detail(req, res) {
   const imgIndex = searchResults.findIndex(el => el["shot_id"] === `${img}_0`);
 
   const clickedImg = searchResults[imgIndex];
+
+  if (!clickedImg) {
+    res.render('error', {
+      msg: 'No search results found'
+    })
+
+    return
+  }
   
   for (let key in clickedImg.results) {
     const category = clickedImg.results[key];
