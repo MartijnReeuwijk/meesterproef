@@ -129,3 +129,12 @@ height: 100px;
 .hidden{
 display: none;
 }
+
+/* main:hover .mainpageImage:nth-of-type(1){
+ transform: translateY(-300px);
+} */
+
+
+.mainpageImage:nth-of-type(1){
+  transition: transform 2s linear;
+}
