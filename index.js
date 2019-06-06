@@ -7,7 +7,10 @@ const express = require("express"),
   port = process.env.PORT || 5000,
   xmlParser = require("xml2json"),
   fs = require("fs"),
+  cron = require("node-cron"),
+  FileHound = require('filehound'),
   dataArray = require('./static/array.js'),
+  cronJobs = require('./partials/cronJobs'),
   searchResults = require('./static/semia_data/SEMIA_search_results10k.json'),
   openbeelden = require('./partials/openbeelden');
 
@@ -43,7 +46,7 @@ function detail(req, res) {
   const imgIndex = searchResults.findIndex(el => el["shot_id"] === `${img}_0`);
 
   const clickedImg = searchResults[imgIndex];
-  
+
   for (let key in clickedImg.results) {
     const category = clickedImg.results[key];
 
@@ -74,3 +77,8 @@ function randomImages(){
 
   return homePageImages
 }
+
+// Every sunday this Cron will run and it will update the array of random images
+cron.schedule("0 0 * * 7", function() {
+    cronJobsDataToArray();
+  });
