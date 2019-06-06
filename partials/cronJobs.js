@@ -1,39 +1,40 @@
-const FileHound = require('filehound'),
-  fs = require("fs");
+const FileHound = require('filehound')
 
-function getRandomNames() {
-  return new Promise(function(resolve, reject) {
-    let imagePath = [];
+const fs = require('fs')
+
+function getRandomNames () {
+  return new Promise(function (resolve, reject) {
+    let imagePath = []
     FileHound.create()
-      .path("./static/images/thumbnails/thumbnails_large/")
+      .path('./static/images/thumbnails/thumbnails_large/')
       .directory()
       .find()
       .then(subdirectories => {
         for (let i = 0; i < subdirectories.length; i++) {
-          imagePath.push(subdirectories[i].match(/\d+/g).map(Number));
+          imagePath.push(subdirectories[i].match(/\d+/g).map(Number))
         }
-        resolve(imagePath);
+        resolve(imagePath)
       })
-      .catch(err => reject(err));
-  });
+      .catch(err => reject(err))
+  })
 }
 
-async function writeArrayToFile() {
+async function writeArrayToFile () {
   try {
-    let a = await getRandomNames();
-    let b = JSON.stringify(a);
-    let c = "let data = " + b + ";"
+    let a = await getRandomNames()
+    let b = JSON.stringify(a)
+    let c = 'let data = ' + b + ';'
 
-    fs.writeFile("static/array.js", c, err => {
-      if (err) throw err;
-      console.log("Array is updated");
-    });
+    fs.writeFile('static/array.js', c, err => {
+      if (err) throw err
+      console.log('Array is updated')
+    })
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
 }
 
 module.exports = {
   getRandomNames,
   writeArrayToFile
-};
+}
