@@ -94,5 +94,8 @@ cron.schedule("* * * * *", function() {
 =======
 cron.schedule("0 0 * * 7", function() {
   cronJobsDataToArray();
+<<<<<<< HEAD
+>>>>>>> 85a36d9228db22aaa1fd685a9e6e44b3e9c2ba5f
+=======
 >>>>>>> 85a36d9228db22aaa1fd685a9e6e44b3e9c2ba5f
 });
