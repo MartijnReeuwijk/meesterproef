@@ -47,6 +47,14 @@ function detail(req, res) {
 
   const clickedImg = searchResults[imgIndex];
 
+  if (!clickedImg) {
+    res.render('error', {
+      msg: 'No search results found'
+    })
+
+    return
+  }
+  
   for (let key in clickedImg.results) {
     const category = clickedImg.results[key];
 
@@ -79,7 +87,12 @@ function randomImages(){
 }
 
 // Every sunday this Cron will run and it will update the array of random images
+<<<<<<< HEAD
 // 0 0 * * 7
 cron.schedule("* * * * *", function() {
     cronJobs.writeArrayToFile();
+=======
+cron.schedule("0 0 * * 7", function() {
+  cronJobsDataToArray();
+>>>>>>> 85a36d9228db22aaa1fd685a9e6e44b3e9c2ba5f
 });
