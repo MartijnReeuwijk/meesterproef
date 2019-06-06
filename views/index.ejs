@@ -17,15 +17,12 @@
 
   </aside>
 
+
+  <%- include('./partials/clock'); -%>
+
   <main class="displayFlex">
-
-
-<%- include('./partials/clock'); -%>
-
   <% for(var i = 0;  i < clips.length; i++) { %>
     <div class="mainpageImage previewImage transition">
-      <!-- Test data but the path will be the same just change the number to the data Var -->
-      <!-- The _0.png must stay so the the app will alwaya get the first one -->
       <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" data-image="<%= clips[i] %>" data-shot="0" alt="">
     </div>
 <% } %>
@@ -35,7 +32,6 @@
 
 </div>
 
-
-<script src="js/selectImage.js"></script>
+<script src="/js/clock.js" type="module" charset="utf-8"></script>
 
 <%- include('./partials/footer'); -%>
