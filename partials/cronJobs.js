@@ -1,5 +1,4 @@
 const FileHound = require('filehound')
-
 const fs = require('fs')
 
 function getRandomNames () {
