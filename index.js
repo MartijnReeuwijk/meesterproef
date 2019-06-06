@@ -8,7 +8,6 @@ const express = require("express"),
   xmlParser = require("xml2json"),
   fs = require("fs"),
   cron = require("node-cron"),
-  // FileHound = require('filehound'),
   dataArray = require('./static/array.js'),
   cronJobs = require('./partials/cronJobs'),
   searchResults = require('./static/semia_data/SEMIA_search_results10k.json'),
@@ -87,7 +86,6 @@ function randomImages(){
 }
 
 // Every sunday this Cron will run and it will update the array of random images
-// 0 0 * * 7
 cron.schedule("0 0 * * 7", function() {
     cronJobs.writeArrayToFile();
 
