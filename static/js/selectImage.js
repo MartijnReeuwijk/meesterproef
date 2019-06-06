@@ -7,7 +7,7 @@ export function thumbnailsEventListener() {
       let image = e.target.childNodes[1].dataset.image;
       let shotNum = e.target.childNodes[1].dataset.shot;
 
-      if (window.location.href.includes("/semia")) {
+      if (window.location.href.includes("/search")) {
         window.location.href += `/${image}`;
       } else {
         window.location.href += `search/${image}`;
