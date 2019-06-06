@@ -1,14 +1,13 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const app = express()
-
-// Waarom de http module?
-// const http = require('http').Server(app)
+const bodyParser = require('body-parser')
 const port = process.env.PORT || 5000
 // const fs = require('fs')
 const dataArray = require('./static/array.js')
 const searchResults = require('./static/semia_data/SEMIA_search_results10k.json')
 // const openbeelden = require('./partials/openbeelden')
+const cronJobs = require('./partials/cronJobs')
+const cron = require('node-cron')
 
 app
   .set('view engine', 'ejs')
@@ -81,3 +80,9 @@ function randomImages () {
 
   return homePageImages
 }
+
+// Every sunday this Cron will run and it will update the array of random images
+cron.schedule("0 0 * * 7", function() {
+    cronJobs.writeArrayToFile();
+
+});
