@@ -1,5 +1,4 @@
 import { element } from './element.js'
-import { thumbnailsEventListener } from '../index.js'
 
 function newImages (images) {
   return new Promise(async (resolve, reject) => {

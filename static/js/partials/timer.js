@@ -1,5 +1,3 @@
-/* global fetch */
-
 import { thumbnailsEventListener } from '../index.js'
 import { data } from './data.js'
 import { render } from './render.js'

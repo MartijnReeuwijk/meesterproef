@@ -52,6 +52,6 @@ function sendRandom (req, res) {
 }
 
 // Every sunday this Cron will run and it will update the array of random images
-// cron.schedule('0 0 * * 7', function () {
-//   cronJobs.writeArrayToFile()
-// })
+cron.schedule('0 0 * * 7', function () {
+  cronJobs.writeArrayToFile()
+})
