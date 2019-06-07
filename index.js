@@ -82,6 +82,6 @@ function randomImages () {
 }
 
 // Every sunday this Cron will run and it will update the array of random images
-cron.schedule('* * * * *', function () {
+cron.schedule('0 0 * * 7', function () {
   cronJobs.writeArrayToFile()
 })
