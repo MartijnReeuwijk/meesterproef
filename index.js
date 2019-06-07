@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 // const bodyParser = require('body-parser')
 const port = process.env.PORT || 5000
-// const fs = require('fs')
 const data = require('./partials/data')
 // const openbeelden = require('./partials/openbeelden')
 const cronJobs = require('./partials/cronJobs')
@@ -15,7 +14,7 @@ app
   // .use(bodyParser.urlencoded({ extended: true }))
 
   .get('/', index)
-  .get('/data', sendData)
+  .get('/random/:id', sendRandom)
   .get('/search/:id', detail)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`))
@@ -46,11 +45,13 @@ function detail (req, res) {
     })
 }
 
-function sendData (req, res) {
-  res.json(data.all)
+function sendRandom (req, res) {
+  const amount = req.params.id
+
+  res.json(data.random(amount))
 }
 
 // Every sunday this Cron will run and it will update the array of random images
-cron.schedule('0 0 * * 7', function () {
-  cronJobs.writeArrayToFile()
-})
+// cron.schedule('0 0 * * 7', function () {
+//   cronJobs.writeArrayToFile()
+// })

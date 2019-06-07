@@ -22,8 +22,8 @@
 
   <main class="displayFlex">
   <% for(var i = 0;  i < clips.length; i++) { %>
-    <div class="mainpageImage previewImage transition">
-      <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" data-image="<%= clips[i] %>" data-shot="0" alt="">
+    <div class="mainpageImage previewImage transition" data-image="<%= clips[i] %>" data-shot="0">
+      <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
     </div>
 <% } %>
 
@@ -32,6 +32,6 @@
 
 </div>
 
-<script src="/js/clock.js" type="module" charset="utf-8"></script>
+<%# <script src="/js/clock.js" type="module" charset="utf-8"></script> %>
 
 <%- include('./partials/footer'); -%>
