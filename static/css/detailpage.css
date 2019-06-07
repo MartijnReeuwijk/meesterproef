@@ -1,0 +1,9 @@
+.selecedImage{
+  /* height: 100vh; */
+  border-right: 1px solid black;
+}
+.optionImage{
+  /* display: inline-flex; */
+  width: calc(33% - 40px);
+  /* height: calc(30vh - 40px); */
+}
