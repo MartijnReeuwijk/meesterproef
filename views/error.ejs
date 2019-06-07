@@ -1,9 +1,14 @@
 <%- include('./partials/head'); -%>
 
-<main class="displayFlex">
-  <h1>Error</h1>
-  <p><%= msg %></p>
-  <a href="/" onclick="event.preventDefault(); window.history.back();">Go back</a>
+<main class="displayFlex errorFlex">
+  <div class="errorPage shadows ">
+    <h1>Error</h1>
+    <p><%= msg %></p>
+    <a href="/" onclick="event.preventDefault(); window.history.back();">Go back</a>
+  </div>
 </main>
+<!-- <div class="errorGif">
+  <img src="/images/error.gif" alt="Error">
+</div> -->
 
 <%- include('./partials/footer'); -%>
