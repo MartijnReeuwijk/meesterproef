@@ -1,8 +1,10 @@
 import { thumbnailsEventListener } from './selectImage.js'
+import { animationHandler } from './animations.js'
 
 // TODO: Make this a fancy fadeout/fadein
 setInterval(function () {
   placeNewImages()
+  animationHandler()
 }, 5000);
 
 // TODO: All of this needs to be triggerd by a timed function
@@ -28,7 +30,7 @@ async function newRandomImage() {
     let changeAbleVar = 9;
     let homePageImages = [];
     // TODO: This 9 is the amount of pics you get we might be able to change it if we need more images to be loaded
-    
+
     for (let i = 0; i < changeAbleVar; i++) {
       homePageImages.push(
         dataArray[Math.floor(Math.random() * dataArray.length)]
