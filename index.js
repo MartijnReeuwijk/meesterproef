@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 5000
 // const fs = require('fs')
-const dataArray = require('./static/array.js')
+const dataArray = require('./static/array.json')
 const searchResults = require('./static/semia_data/SEMIA_search_results10k.json')
 // const openbeelden = require('./partials/openbeelden')
 const cronJobs = require('./partials/cronJobs')
@@ -82,6 +82,6 @@ function randomImages () {
 }
 
 // Every sunday this Cron will run and it will update the array of random images
-cron.schedule('0 0 * * 7', function () {
+cron.schedule('* * * * *', function () {
   cronJobs.writeArrayToFile()
 })
