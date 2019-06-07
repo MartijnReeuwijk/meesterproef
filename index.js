@@ -1,10 +1,8 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const port = process.env.PORT || 5000
-// const fs = require('fs')
-const dataArray = require('./static/array.json')
-const searchResults = require('./static/semia_data/SEMIA_search_results10k.json')
+const data = require('./partials/data')
 // const openbeelden = require('./partials/openbeelden')
 const cronJobs = require('./partials/cronJobs')
 const cron = require('node-cron')
@@ -13,20 +11,16 @@ app
   .set('view engine', 'ejs')
   .set('views', 'views')
   .use(express.static('static/'))
-  .use(
-    bodyParser.urlencoded({
-      extended: true
-    })
-  )
+  // .use(bodyParser.urlencoded({ extended: true }))
 
   .get('/', index)
-  .get('/data', sendData)
+  .get('/random/:id', sendRandom)
   .get('/search/:id', detail)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`))
 
 async function index (req, res) {
-  let clips = randomImages()
+  let clips = data.random()
 
   res.render('index.ejs', {
     clips: clips
@@ -34,51 +28,27 @@ async function index (req, res) {
 }
 
 function detail (req, res) {
-  let newImgs = []
   const urlParts = req.url.split('/')
   const img = urlParts[urlParts.length - 1]
 
-  const imgIndex = searchResults.findIndex(el => el['shot_id'] === `${img}_0`)
-
-  const clickedImg = searchResults[imgIndex]
-
-  if (!clickedImg) {
-    res.render('error', {
-      msg: 'No search results found'
+  data.randomRelated(img)
+    .then(imgs => {
+      res.render('detail', {
+        prevImg: img,
+        newImgs: imgs
+      })
     })
-
-    return
-  }
-
-  for (let key in clickedImg.results) {
-    const category = clickedImg.results[key]
-
-    for (let i = 0; i < 3; i++) {
-      const randomImage = category[Math.floor(Math.random() * category.length)]
-      newImgs.push(randomImage)
-    }
-  }
-
-  newImgs = newImgs.filter((item, i) => i < 9)
-
-  res.render('detail', {
-    prevImg: img,
-    newImgs: newImgs
-  })
+    .catch(err => {
+      res.render('error', {
+        msg: err
+      })
+    })
 }
 
-function sendData (req, res) {
-  res.json(dataArray)
-}
+function sendRandom (req, res) {
+  const amount = req.params.id
 
-function randomImages () {
-  let homePageImages = []
-
-  for (let i = 0; i < 9; i++) {
-    homePageImages.push(dataArray[Math.floor(Math.random() * dataArray.length)])
-  }
-
-  return homePageImages
+  res.json(data.random(amount))
 }
 
 // Every sunday this Cron will run and it will update the array of random images
