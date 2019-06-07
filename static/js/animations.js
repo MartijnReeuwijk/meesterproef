@@ -1,7 +1,8 @@
-// console.log("Adding animation classes")
-
+export function animationHandler() {
+console.log("Adding animation classes")
 // const theNine = document.querySelectorAll('.mainpageImage')
-//
 // theNine.forEach(one=>{
-// one.classList.add('')
+// one.classList.add('upAndDown')
+// console.log(one.innerHTML)
 // })
+}

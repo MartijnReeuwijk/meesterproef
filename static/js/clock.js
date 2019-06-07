@@ -1,6 +1,7 @@
 /* global fetch */
 
 import { thumbnailsEventListener } from './selectImage.js'
+import { animationHandler } from './animations.js'
 
 // TODO: Make this a fancy fadeout/fadein
 setInterval(function () {
