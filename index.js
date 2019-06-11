@@ -3,7 +3,7 @@ const app = express()
 // const bodyParser = require('body-parser')
 const port = process.env.PORT || 5000
 const data = require('./partials/data')
-// const openbeelden = require('./partials/openbeelden')
+const openbeelden = require('./partials/openbeelden')
 const cronJobs = require('./partials/cronJobs')
 const cron = require('node-cron')
 
@@ -15,7 +15,8 @@ app
 
   .get('/', index)
   .get('/random/:id', sendRandom)
-  .get('/search/:id', detail)
+  .get('/search/:id', search)
+  .get('/detail/:id', detail)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`))
 
@@ -27,13 +28,13 @@ async function index (req, res) {
   })
 }
 
-function detail (req, res) {
+function search (req, res) {
   const urlParts = req.url.split('/')
   const img = urlParts[urlParts.length - 1]
 
   data.randomRelated(img)
     .then(imgs => {
-      res.render('detail', {
+      res.render('search', {
         prevImg: img,
         newImgs: imgs
       })
@@ -43,6 +44,17 @@ function detail (req, res) {
         msg: err
       })
     })
+}
+
+async function detail (req, res) {
+  const id = req.params.id
+
+  const apiData = await openbeelden.get(id)
+  const data = apiData['OAI-PMH'].GetRecord.record.metadata
+
+  res.render('detail', {
+    data: data
+  })
 }
 
 function sendRandom (req, res) {
