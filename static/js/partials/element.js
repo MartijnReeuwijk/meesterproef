@@ -1,3 +1,10 @@
+/*
+
+Author: jeroentvb
+Note: Don't change anything in this file unless you know what you are doing
+
+*/
+
 function create (name, cssClass) {
   const el = document.createElement(name)
 
