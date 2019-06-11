@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon",
-    "build": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\""
+    "build": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\" && git status"
   },
   "repository": {
     "type": "git",
