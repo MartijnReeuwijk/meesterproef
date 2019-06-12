@@ -5,8 +5,8 @@
     "display" : "standalone",
     "orientation" : "any",
     "lang" : "Dutch",
-    "background_color" : "fff",
-    "theme_color": "fff",
+    "background_color" : "#fff",
+    "theme_color": "#fff",
     "icons": [
     {
       "src": "/images/icons/icon-72x72.png",
