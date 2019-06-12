@@ -1,5 +1,33 @@
 <%- include('./partials/head'); -%>
-<link rel="stylesheet" type="text/css" href="/css/errorpage.css">
+<style>
+  .displayFlex {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .errorPage {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .errorPage h1 {
+    color: red;
+  }
+  .errorFlex{
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/error.gif");
+  }
+
+</style>
 
 <main class="displayFlex errorFlex">
   <div class="errorPage shadows ">

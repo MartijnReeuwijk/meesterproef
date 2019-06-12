@@ -1,6 +1,6 @@
 
-var CACHE_NAME = 'semia-cache-v1';
-var urlsToCache = [
+const CACHE_NAME = 'semia-cache-v1';
+const urlsToCache = [
   '/',
   '/offline',
   '/images/error.gif',
