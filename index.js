@@ -28,7 +28,7 @@ async function index (req, res) {
   })
 }
 
-function offline(req, res) {
+function offline (req, res) {
   res.render('offline.ejs')
 }
 
