@@ -5,6 +5,7 @@
     "display" : "standalone",
     "orientation" : "any",
     "lang" : "Dutch",
+    "scope": "/",
     "background_color" : "#fff",
     "theme_color": "#fff",
     "icons": [
