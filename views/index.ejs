@@ -1,4 +1,5 @@
 <%- include('./partials/head'); -%>
+
 <div class="bigAssContainer">
 <!-- <button class="unfolder" type="button" name="button">men</button> -->
 <div class="timer">
@@ -12,9 +13,6 @@
     <button type="button" name="button">Kleur</button>
     <button type="button" name="button">Beweging</button>
     <button type="button" name="button">Clutter</button>
-
-
-
   </aside>
 
 
@@ -22,16 +20,15 @@
 
   <main class="displayFlex">
   <% for(var i = 0;  i < clips.length; i++) { %>
-    <div class="mainpageImage previewImage transition" data-image="<%= clips[i] %>" data-shot="0">
+    <button name="foto button" class="mainpageImage previewImage transition"  data-image="<%= clips[i] %>" data-shot="0">
       <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
-    </div>
+    </button>
 <% } %>
-
-
   </main>
 
 </div>
 
 <script src="/js/index.js" type="module"></script>
+<script src="/sw-register.js" type="text/javascript"></script>
 
 <%- include('./partials/footer'); -%>

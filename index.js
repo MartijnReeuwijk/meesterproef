@@ -17,6 +17,7 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
 
   .get('/', index)
+  .get('/offline', offline)
   .get('/random/:id', sendRandom)
   .get('/search/:id', search)
   .get('/detail/:id', detail)
@@ -31,6 +32,10 @@ async function index (req, res) {
   res.render('index.ejs', {
     clips: clips
   })
+}
+
+function offline (req, res) {
+  res.render('offline.ejs')
 }
 
 function search (req, res) {
