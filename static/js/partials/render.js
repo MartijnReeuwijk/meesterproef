@@ -6,21 +6,21 @@ function newImages (images) {
     let imgs = []
 
     images.forEach(image => {
-      const div = element.create('div', [
+      const button = element.create('button', [
         'mainpageImage',
         'previewImage',
         'transition'
       ])
 
-      div.dataset.image = image[0]
-      div.dataset.shot = 0
+      button.dataset.image = image[0]
+      button.dataset.shot = 0
 
       const src = `../images/thumbnails/thumbnails_large/${image[0]}/${image[0]}_0.png`
       const img = element.image(src, '')
 
-      div.appendChild(img)
+      button.appendChild(img)
 
-      imgs.push(div)
+      imgs.push(button)
     })
 
     await element.update(main, imgs)
