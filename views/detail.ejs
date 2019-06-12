@@ -1,13 +1,18 @@
-<%- include('./partials/head'); -%>
+<%= JSON.stringify(data) %>
 
-<main class="displayFlex">
+<form action="/share" method="post">
+  <label for="customUrl">Custom url</label>
+  <input id="customUrl" type="text" name="customUrl" required>
 
-<img src="../images/thumbnails/thumbnails_large/<%= prevImg %>/<%= prevImg %>_0.png" data-image="<%= prevImg %>" data-shot="0" alt="">
+  <input id="currentUrl" type="text" name="currentUrl" required>
 
-<% newImgs.forEach(img => { %>
-  <img src="../images/thumbnails/thumbnails_large/<%= img.split('_')[0] %>/<%= img %>.png" data-image="<%= img %>" data-shot="0" alt="">
-<% }) %>
+  <input type="submit">
+</form>
 
-</main>
+<script>
+  const urlParts = window.location.href.split('/')
+  const imgSequence = urlParts[urlParts.length - 1]
+  const input = document.getElementById('currentUrl')
 
-<%- include('./partials/footer'); -%>
+  input.value = imgSequence
+</script>

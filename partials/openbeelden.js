@@ -12,7 +12,9 @@ function get (id) {
 
       const data = xmlParser.toJson(xml)
 
-      resolve(data)
+      const formattedData = JSON.parse(data)
+
+      resolve(formattedData)
     } catch (err) {
       reject(err)
     }
