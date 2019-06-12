@@ -12,9 +12,6 @@
     <button type="button" name="button">Kleur</button>
     <button type="button" name="button">Beweging</button>
     <button type="button" name="button">Clutter</button>
-
-
-
   </aside>
 
 
@@ -22,9 +19,9 @@
 
   <main class="displayFlex">
   <% for(var i = 0;  i < clips.length; i++) { %>
-    <div class="mainpageImage previewImage transition" data-image="<%= clips[i] %>" data-shot="0">
+    <button name="foto-button" class="mainpageImage previewImage transition"  data-image="<%= clips[i] %>" data-shot="0">
       <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
-    </div>
+    </button>
 <% } %>
 
 
