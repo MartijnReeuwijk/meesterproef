@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon",
-    "build": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\""
+    "build": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\"",
+    "setupdb": "node partials/setupdb.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "ejs-lint": "^0.3.0",
     "express": "^4.17.1",
@@ -37,6 +39,7 @@
     "html-minifier": "^3.5.21",
     "install": "^0.12.2",
     "memory-cache": "^0.2.0",
+    "mysql": "^2.17.1",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.0",
     "node-gzip": "^1.1.2",

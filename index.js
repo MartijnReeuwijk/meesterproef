@@ -1,22 +1,27 @@
 const express = require('express')
 const app = express()
-// const bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 const port = process.env.PORT || 5000
 const data = require('./partials/data')
 const openbeelden = require('./partials/openbeelden')
 const cronJobs = require('./partials/cronJobs')
 const cron = require('node-cron')
+const db = require('./partials/db')
+
+db.init()
 
 app
   .set('view engine', 'ejs')
   .set('views', 'views')
   .use(express.static('static/'))
-  // .use(bodyParser.urlencoded({ extended: true }))
+  .use(bodyParser.urlencoded({ extended: true }))
 
   .get('/', index)
   .get('/random/:id', sendRandom)
   .get('/search/:id', search)
   .get('/detail/:id', detail)
+  .post('/share', share)
+  .get('/share/:id', shareUrl)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`))
 
@@ -56,6 +61,46 @@ async function detail (req, res) {
   res.render('detail', {
     data: data
   })
+}
+
+async function share (req, res) {
+  const url = {
+    current: req.body.currentUrl,
+    custom: req.body.customUrl
+  }
+
+  try {
+    const result = await db.query('SELECT * FROM semia.urls WHERE shortUrl = ?', url.custom)
+
+    if (result.length !== 0) {
+      res.render('error', {
+        msg: 'The submitted custom url already exists'
+      })
+
+      return
+    }
+
+    await db.query('INSERT INTO semia.urls SET origionalUrl = ?, shortUrl = ?', [
+      url.current,
+      url.custom
+    ])
+
+    res.redirect(`/share/${url.custom}`)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+async function shareUrl (req, res) {
+  const id = req.params.id
+
+  try {
+    const result = await db.query('SELECT origionalUrl FROM semia.urls WHERE shortUrl = ?', id)
+
+    res.redirect(`/detail/${result[0].origionalUrl}`)
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 function sendRandom (req, res) {
