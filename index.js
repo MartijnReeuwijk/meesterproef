@@ -29,14 +29,15 @@ async function index (req, res) {
 }
 
 function search (req, res) {
-  const urlParts = req.url.split('/')
-  const img = urlParts[urlParts.length - 1]
+  const imgs = req.url.split('/')[2].split('-')
+  const recentImg = imgs[imgs.length - 1]
 
-  data.randomRelated(img)
-    .then(imgs => {
+  data.randomRelated(recentImg)
+    .then(relatedImages => {
       res.render('search', {
-        prevImg: img,
-        newImgs: imgs
+        prevImg: recentImg,
+        newImgs: relatedImages,
+        path: imgs
       })
     })
     .catch(err => {
