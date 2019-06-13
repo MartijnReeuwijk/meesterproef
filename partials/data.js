@@ -1,5 +1,5 @@
 const images = require('../static/array.json')
-const searchResults = require('../static/semia_data/SEMIA_search_results10k.json')
+const searchResults = require('../static/semia_data/SEMIA_search_results.json')
 
 function random (amount = 9) {
   let imgArray = []
