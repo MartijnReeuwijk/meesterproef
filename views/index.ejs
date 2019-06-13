@@ -1,22 +1,17 @@
 <%- include('./partials/head'); -%>
 
 <div class="bigAssContainer">
-<!-- <button class="unfolder" type="button" name="button">men</button> -->
 <div class="timer">
-  <!-- <p>Big ole timer</p> -->
+  <a href=""><</a>
+  <p>4</p>
+  <a href="">></a>
 </div>
-<div class="breadCrumbs">
-<p>x</p>
-</div>
-  <aside class="hidden">
-    <button type="button" name="button">Vorm</button>
-    <button type="button" name="button">Kleur</button>
-    <button type="button" name="button">Beweging</button>
-    <button type="button" name="button">Clutter</button>
-  </aside>
+
 
 
   <%- include('./partials/clock'); -%>
+
+
 
   <main class="displayFlex">
   <% for(var i = 0;  i < clips.length; i++) { %>
