@@ -1,7 +1,6 @@
 
 const CACHE_NAME = 'semia-cache-v1';
 const urlsToCache = [
-  '/',
   '/offline',
   '/images/error.gif',
   '/css/errorpage.css'
