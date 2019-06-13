@@ -62,5 +62,5 @@ typings/
 
 thumbnails
 .DS_Store
-
+/static/semia_data/SEMIA_search_results.json
 .env
