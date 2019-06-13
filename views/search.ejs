@@ -1,25 +1,49 @@
 <%- include('./partials/head'); -%>
-<%- include('./partials/selectedVideo'); -%>
+
 <div class="bigAssContainer">
+<%- include('./partials/selectedVideo'); -%>
 <div class="timer">
   <a href=""><</a>
   <p>4</p>
   <a href="">></a>
 </div>
 
+<aside class="">
+<div class="current-pick">
+    <h3>Current video</h3>
+    <div class="video-placeholder">
+<img src="../images/thumbnails/thumbnails_large/<%= prevImg %>/<%= prevImg %>_0.png" data-image="<%= prevImg %>" data-shot="0" alt="">
+    </div>
+    <button class="filter-small">filter on<span><img src="img/shape.svg" alt=""></span></button>
+    <div class="filter-small_dropdown short">
+      <a href="">Kleur</a>
+      <a href="">Vorm</a>
+      <a href="">Beweging</a>
+      <a href="">Clutter</a>
+    </div>
+</div>
+    <h3>viewing path</h3>
+    <div class="history-container">
+      <% path.forEach(img => { %>
+      <article class="">
+      <div class="">
+        <img src="../images/thumbnails/thumbnails_large/<%= img %>/<%= img %>_0.png" data-image="<%= img %>" data-shot="0" alt="">
+      </div>
+      </article>
+      <% }) %>
+    </div>
+  </aside>
+
+
 <main class="displayFlex">
 
-<h2>History</h2>
-<% path.forEach(img => { %>
-  <img src="../images/thumbnails/thumbnails_large/<%= img %>/<%= img %>_0.png" data-image="<%= img %>" data-shot="0" alt="">
-<% }) %>
-
-<h2>Previous image</h2>
-<img src="../images/thumbnails/thumbnails_large/<%= prevImg %>/<%= prevImg %>_0.png" data-image="<%= prevImg %>" data-shot="0" alt="">
-
-<h2>Related images</h2>
+<!-- <h2>Related images</h2> -->
 <% newImgs.forEach(img => { %>
+
   <img src="../images/thumbnails/thumbnails_large/<%= img.split('_')[0] %>/<%= img %>.png" data-image="<%= img %>" data-shot="0" alt="">
+  <div class="">
+    <p>Preview</p>
+  </div>
 <% }) %>
 
 </main>

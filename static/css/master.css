@@ -4,13 +4,13 @@ body {
   font-size: 17px;
 }
 
-.displayFlex {
+/* .displayFlex {
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-} 
+} */
 .mainpageImage:before {
   position: absolute;
   top: 50%;
@@ -47,14 +47,9 @@ body {
   transition: transform 2s linear;
 }
 
-/* split between two css split between two css split between two css  split between two css */
+
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'avenir', sans-serif;
-  margin: 0px;
 }
 
 .displayFlex {
@@ -75,11 +70,15 @@ body {
 .mainpageImage img {
   width: 100%;
   height: auto;
+box-sizing: border-box;
 }
 
+.mainpageImage:focus,
 .mainpageImage:hover {
   border: 5px solid #6c03ca;
   cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .history-container::-webkit-scrollbar {
@@ -229,15 +228,15 @@ cursor: pointer;
   overflow-y: scroll;
   padding: 10px;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .history-container article div {
   /* padding-bottom: 20px; */
   margin-bottom: 10px;
   height: 60px;
-  background-color: #eee;
-  width: 100px;
+  /* background-color: #eee; */
+  width: 120px;
 }
 
 .filter-small span {
@@ -297,8 +296,8 @@ cursor: pointer;
 }
 
 .current-pick .video-placeholder {
-  background-color: #eee;
-  max-width: 160px;
+  /* background-color: #eee;
+  max-width: 160px; */
   height: 90px;
   margin: auto;
   text-align: center;
