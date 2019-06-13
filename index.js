@@ -23,6 +23,7 @@ app
   .get('/detail/:id', detail)
   .post('/share', share)
   .get('/share/:id', shareUrl)
+  .get('/ob-video/:id', sendMetadata)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`))
 
@@ -112,6 +113,14 @@ function sendRandom (req, res) {
   const amount = req.params.id
 
   res.json(data.random(amount))
+}
+
+async function sendMetadata (req, res) {
+  const id = req.params.id
+
+  const data = await openbeelden.get(id)
+
+  res.json(data['OAI-PMH'])
 }
 
 // Every sunday this Cron will run and it will update the array of random images
