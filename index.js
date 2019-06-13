@@ -23,19 +23,22 @@ app
   .get('/detail/:id', detail)
   .post('/share', share)
   .get('/share/:id', shareUrl)
+  .get('/ob-video/:id', sendMetadata)
+
+  .use(notFound)
 
   .listen(port, () => console.log(`[server] listening on port ${port}`))
 
 async function index (req, res) {
   let clips = data.random()
 
-  res.render('index.ejs', {
+  res.render('index', {
     clips: clips
   })
 }
 
 function offline (req, res) {
-  res.render('offline.ejs')
+  res.render('offline')
 }
 
 function search (req, res) {
@@ -51,8 +54,10 @@ function search (req, res) {
       })
     })
     .catch(err => {
-      res.render('error', {
-        msg: err
+      console.error(err)
+
+      res.status(500).render('error', {
+        msg: 'Something went wrong..'
       })
     })
 }
@@ -93,6 +98,10 @@ async function share (req, res) {
     res.redirect(`/share/${url.custom}`)
   } catch (err) {
     console.error(err)
+
+    res.status(500).render('error', {
+      msg: 'Something went wrong..'
+    })
   }
 }
 
@@ -105,6 +114,10 @@ async function shareUrl (req, res) {
     res.redirect(`/detail/${result[0].origionalUrl}`)
   } catch (err) {
     console.error(err)
+
+    res.status(500).render('error', {
+      msg: 'Something went wrong..'
+    })
   }
 }
 
@@ -112,6 +125,28 @@ function sendRandom (req, res) {
   const amount = req.params.id
 
   res.json(data.random(amount))
+}
+
+async function sendMetadata (req, res) {
+  const id = req.params.id
+
+  try {
+    const data = await openbeelden.get(id)
+
+    res.json(data['OAI-PMH'])
+  } catch (err) {
+    console.error(err)
+
+    res.status(500).render('error', {
+      msg: 'Something went wrong..'
+    })
+  }
+}
+
+function notFound (req, res) {
+  res.status(404).render('error', {
+    msg: '404 page not found'
+  })
 }
 
 // Every sunday this Cron will run and it will update the array of random images
