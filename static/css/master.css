@@ -41,6 +41,7 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   position: relative;
+  padding: 20px;
 }
 
 .mainpageImage:nth-of-type(1) {
@@ -104,19 +105,18 @@ aside {
   grid-row: 2/3;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .timer {
-  grid-row: 1/2;
-  grid-column: 1/2;
+  /* grid-row: 1/2;
+  grid-column: 1/2; */
   background-color: #f7f7f7;
   border-radius: 50%;
   width: 140px;
   height: 140px;
   border: 5px solid #6c02ca;
-  position: absolute;
-  left: 80px;
-  top: 20px;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -231,11 +231,12 @@ cursor: pointer;
   flex-direction: column-reverse;
 }
 
+.history-container article div img{
+  cursor: pointer;
+}
 .history-container article div {
-  /* padding-bottom: 20px; */
-  margin-bottom: 10px;
+  padding: 10px;
   height: 60px;
-  /* background-color: #eee; */
   width: 120px;
 }
 
@@ -357,6 +358,15 @@ aside h3 {
   border-radius: 5px;
   margin: 20px;
 }
+fieldset{
+border: none;
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+fieldset input{
+display: none;
+}
 
 .meta {
   padding: 15px;
@@ -372,6 +382,7 @@ aside h3 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column: 1/7;
   background-color: #fff;
+  padding: 30px;
 }
 
 .detail {
