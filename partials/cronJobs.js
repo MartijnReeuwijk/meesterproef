@@ -19,11 +19,13 @@ function getRandomNames () {
 }
 
 async function writeArrayToFile () {
+  console.log("writeArrayToFile");
   try {
     let a = await getRandomNames()
-    let b = JSON.stringify(a)
+    let b = a.flat()
+    let c = JSON.stringify(b)
 
-    fs.writeFile('static/array.json', b, err => {
+    fs.writeFile('static/array.json', c, err => {
       if (err) throw err
       console.log('Array is updated')
     })
