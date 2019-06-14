@@ -42,6 +42,15 @@
 }
 
 /* maybe could have done this with JS */
+.shareIcon{
+  width: 100px;
+  margin: auto;
+  max-height: 300px;
+  height: 100px;
+
+  background-image: url("../images/socials/share.svg");
+
+}
 .instagram {
   background-image: url("../images/socials/instagram.svg");
 }
@@ -73,6 +82,7 @@
 .overlayDark {
   position: absolute;
   z-index: 8;
+  top: 0px;
   width: 100vw;
   height: 100vh;
   cursor: pointer;
