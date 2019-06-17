@@ -24,7 +24,8 @@ app
   .post('/share', share)
   .get('/share/:id', shareUrl)
   .get('/ob-video/:id', sendMetadata)
-  .get('/filter/:id', sendRelated)
+  .get('/filter/:id', sendFiltered)
+  .get('/related/:id/:amount', sendRelated)
 
   .use(notFound)
 
@@ -51,7 +52,7 @@ function search (req, res) {
       res.render('search', {
         prevImg: recentImg,
         newImgs: relatedImages,
-        path: imgs,
+        path: imgs
       })
     })
     .catch(err => {
@@ -128,9 +129,24 @@ function sendRandom (req, res) {
   res.json(data.random(amount))
 }
 
-function sendRelated(req, res) {
+function sendFiltered(req, res) {
   const imageId = req.params.id
   res.json(data.related(imageId))
+}
+
+function sendRelated (req, res) {
+  const id = req.params.id
+  const amount = req.params.amount
+
+   data.randomRelated(id, amount)
+    .then(images => res.json(images))
+    .catch(err => {
+      console.error(err)
+
+       res.status(500).json({
+        error: 'Something went wrong'
+      })
+    })
 }
 
 async function sendMetadata (req, res) {

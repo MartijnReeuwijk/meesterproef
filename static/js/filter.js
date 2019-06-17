@@ -17,6 +17,8 @@ function getFilterdata () {
 async function dataFilter () {
   const type = this.value
   const data = await getFilterdata()
+  // REMOVE LATER
+  console.log(data.results[type])
   return data.results[type]
 }
 
