@@ -18,6 +18,7 @@ function randomRelated (img, amount = 9) {
     let newImgs = []
     const imgIndex = searchResults.findIndex(el => el['shot_id'] === `${img}_0`)
     const clickedImg = searchResults[imgIndex]
+    console.log(clickedImg);
 
     if (!clickedImg) reject(new Error('No search results found'))
 
