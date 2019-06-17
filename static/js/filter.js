@@ -1,3 +1,5 @@
+import { render } from './partials/render.js'
+
 const input = document.querySelectorAll('fieldset input')
 
 function getFilterdata () {
@@ -14,14 +16,21 @@ function getFilterdata () {
   })
 }
 
-async function dataFilter () {
-  const type = this.value
+async function dataFilter (value) {
   const data = await getFilterdata()
-  // REMOVE LATER
-  console.log(data.results[type])
-  return data.results[type]
+  return data.results[value]
+}
+
+async function renderFilterdata () {
+  let filteredImages = [];
+  const filterdData = await dataFilter(this.value)
+  const filterdDataId = filterdData.map(id => id.split('_')[0])
+  for (let i = 0; i < 9; i++) {
+    filteredImages.push(filterdDataId[i])
+  }
+  render.newImages(filteredImages)
 }
 
 input.forEach(elem => {
-  elem.addEventListener('click', dataFilter)
+  elem.addEventListener('click', renderFilterdata)
 })
