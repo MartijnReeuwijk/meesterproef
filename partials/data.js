@@ -18,7 +18,6 @@ function randomRelated (img, amount = 9) {
     let newImgs = []
     const imgIndex = searchResults.findIndex(el => el['shot_id'] === `${img}_0`)
     const clickedImg = searchResults[imgIndex]
-    console.log(clickedImg);
 
     if (!clickedImg) reject(new Error('No search results found'))
 
@@ -38,8 +37,16 @@ function randomRelated (img, amount = 9) {
   })
 }
 
+function related(id) {
+    const relatedIndex = searchResults.findIndex(el => el['shot_id'] === `${id}_0`)
+    const relatedImages = searchResults[relatedIndex]
+    console.log(relatedImages);
+    return relatedImages;
+}
+
 module.exports = {
   all: images,
   random,
-  randomRelated
+  randomRelated,
+  related
 }

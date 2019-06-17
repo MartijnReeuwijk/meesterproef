@@ -1,12 +1,25 @@
-function dataFilter(type){
+const input = document.querySelectorAll('fieldset input')
 
-  // const filteredData = results.filter(elem => {
-  //   // body...
-  // });
-
+function getFilterdata () {
+  return new Promise(async (resolve, reject) => {
+    const lastValue = window.location.pathname.split('/').slice(-1)[0].split('-')
+    const url = window.location.protocol + '//' + window.location.host + '/' + 'filter' + '/' + lastValue
+    try {
+      const res = await fetch(url)
+      const data = await res.json()
+      resolve(data)
+    } catch (err) {
+      reject(err)
+    }
+  })
 }
 
-
-module.exports = {
-  dataFilter
+async function dataFilter () {
+  const type = this.value
+  const data = await getFilterdata()
+  return data.results[type]
 }
+
+input.forEach(elem => {
+  elem.addEventListener('click', dataFilter)
+})

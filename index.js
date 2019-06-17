@@ -8,7 +8,7 @@ const cronJobs = require('./partials/cronJobs')
 const cron = require('node-cron')
 const db = require('./partials/db')
 
-db.init()
+// db.init()
 
 app
   .set('view engine', 'ejs')
@@ -19,12 +19,12 @@ app
   .get('/', index)
   .get('/offline', offline)
   .get('/random/:id', sendRandom)
-  .get('/related/:id/:amount', sendRelated)
   .get('/search/:id', search)
   .get('/detail/:id', detail)
   .post('/share', share)
   .get('/share/:id', shareUrl)
   .get('/ob-video/:id', sendMetadata)
+  .get('/filter/:id', sendRelated)
 
   .use(notFound)
 
@@ -51,7 +51,7 @@ function search (req, res) {
       res.render('search', {
         prevImg: recentImg,
         newImgs: relatedImages,
-        path: imgs
+        path: imgs,
       })
     })
     .catch(err => {
@@ -128,19 +128,9 @@ function sendRandom (req, res) {
   res.json(data.random(amount))
 }
 
-function sendRelated (req, res) {
-  const id = req.params.id
-  const amount = req.params.amount
-
-  data.randomRelated(id, amount)
-    .then(images => res.json(images))
-    .catch(err => {
-      console.error(err)
-
-      res.status(500).json({
-        error: 'Something went wrong'
-      })
-    })
+function sendRelated(req, res) {
+  const imageId = req.params.id
+  res.json(data.related(imageId))
 }
 
 async function sendMetadata (req, res) {

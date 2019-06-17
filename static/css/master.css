@@ -383,7 +383,7 @@ grid-template-columns: 1fr 1fr;
 }
 
 fieldset input{
-display: none;
+/* display: none; */
 }
 
 .meta {
