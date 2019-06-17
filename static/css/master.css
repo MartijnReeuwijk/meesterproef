@@ -3,7 +3,25 @@ body {
   margin: 0px;
   font-size: 17px;
 }
+.homebutton{
+  width: 75px;
+  height: 50px;
+  background-color: #6c02ca;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  border: 1px solid #6c02ca;
 
+}
+.homebutton:hover{
+  background-color: white;
+  color: black;
+}
 /* .displayFlex {
   display: flex;
   align-items: center;
