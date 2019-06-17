@@ -19,6 +19,7 @@ app
   .get('/', index)
   .get('/offline', offline)
   .get('/random/:id', sendRandom)
+  .get('/related/:id/:amount', sendRelated)
   .get('/search/:id', search)
   .get('/detail/:id', detail)
   .post('/share', share)
@@ -125,6 +126,21 @@ function sendRandom (req, res) {
   const amount = req.params.id
 
   res.json(data.random(amount))
+}
+
+function sendRelated (req, res) {
+  const id = req.params.id
+  const amount = req.params.amount
+
+  data.randomRelated(id, amount)
+    .then(images => res.json(images))
+    .catch(err => {
+      console.error(err)
+
+      res.status(500).json({
+        error: 'Something went wrong'
+      })
+    })
 }
 
 async function sendMetadata (req, res) {
