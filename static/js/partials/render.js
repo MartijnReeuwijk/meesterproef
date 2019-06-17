@@ -12,10 +12,10 @@ function newImages (images) {
         'transition'
       ])
 
-      button.dataset.image = image[0]
+      button.dataset.image = image
       button.dataset.shot = 0
 // set comments here @jeroen
-      const src = `../images/thumbnails/thumbnails_large/${image[0]}/${image[0]}_0.png`
+      const src = `../images/thumbnails/thumbnails_large/${image}/${image}_0.png`
       const img = element.image(src, '')
 // Tim placed a button inside the thing here so we can make ap preview button for each element
       // const previewLink = `<button value="${image[0]}">Preview</preview>`
