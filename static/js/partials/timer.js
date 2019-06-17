@@ -2,8 +2,10 @@ import { thumbnailsEventListener } from '../index.js'
 import { data } from './data.js'
 import { render } from './render.js'
 
+let timerVar
+
 function start (interval) {
-  setInterval(async () => {
+  timerVar = setInterval(async () => {
     const url = window.location.href
     const urlParts = url.split('/')
     const images = urlParts[urlParts.length - 1].split('-')
@@ -32,6 +34,13 @@ function start (interval) {
   }, interval)
 }
 
+function stop () {
+  clearInterval(timerVar)
+
+  console.log('Stopped the timer')
+}
+
 export const timer = {
-  start
+  start,
+  stop
 }
