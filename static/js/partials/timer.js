@@ -40,7 +40,14 @@ function stop () {
   console.log('Stopped the timer')
 }
 
+function changeInterval (interval) {
+  stop()
+
+  start(interval)
+}
+
 export const timer = {
   start,
-  stop
+  stop,
+  changeInterval
 }
