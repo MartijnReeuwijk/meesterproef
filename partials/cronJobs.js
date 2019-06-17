@@ -19,7 +19,7 @@ function getRandomNames () {
 }
 
 async function writeArrayToFile () {
-  console.log("writeArrayToFile");
+  console.log('writeArrayToFile')
   try {
     let a = await getRandomNames()
     let b = a.flat()
