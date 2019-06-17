@@ -8,7 +8,7 @@ const cronJobs = require('./partials/cronJobs')
 const cron = require('node-cron')
 const db = require('./partials/db')
 
-// db.init()
+db.init()
 
 app
   .set('view engine', 'ejs')
