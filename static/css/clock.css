@@ -41,3 +41,10 @@ svg circle {
     stroke-dashoffset: 300px;
   }
 }
+
+.timer{
+  stroke-width: 5px;
+  stroke: #c1deff;
+  fill: none;
+  animation: countdown 5s linear infinite forwards;
+}

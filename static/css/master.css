@@ -71,7 +71,7 @@ body {
 .mainpageImage:nth-of-type(1) {
   transition: transform 2s linear;
 }
-
+/* .shareIcon:hover, */
 label:focus,
 label:hover {
   cursor: pointer;
@@ -79,11 +79,14 @@ label:hover {
   background-color: #6c03ca2b;
 }
 
-label {
-  position: relative;
-  padding: 5px;
-  padding-left: 35px;
+
+label{
+padding: 5px;
+position: relative;
+cursor: pointer;
+padding-left: 35px;
   cursor: pointer;
+
 }
 
 label:nth-of-type(1)::before {
@@ -337,6 +340,12 @@ aside {
 
 .history-container {
   display: flex;
+  background-color: #e0e0e0;
+  width: 210px;
+  margin: auto;
+  max-height: 300px;
+  height: 170px;
+
   overflow-y: scroll;
   align-items: center;
   flex-direction: column-reverse;
@@ -350,13 +359,22 @@ aside {
 
 .history-container article div img {
   cursor: pointer;
+  width: 100%;
   border-radius: 5px;
+
 }
 
 .history-container article div {
+  height: 95px;
+  width: 190px;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+
   width: 120px;
   height: 60px;
   padding: 10px;
+
 }
 
 .filter-small span {
@@ -445,9 +463,13 @@ aside {
   color: #484848;
 }
 
+h3{
+font-weight: 100;
+}
 aside h3 {
   margin: 0;
   text-align: center;
+  margin: 0;
   font-weight: 100;
 }
 
@@ -461,6 +483,9 @@ aside h3 {
   height: 600px;
   margin: 20px;
   opacity: .8;
+  grid-row: 1/2;
+  grid-column: 2/5;
+  background-color: #6875fb;
   opacity: 0.8;
   border-radius: 5px;
   background-color: #fae;
@@ -496,7 +521,7 @@ aside input {
 }
 
 .testDetail h2 {
-  text-align: center;
+  font-weight: 100;
 }
 
 .testDetail {
@@ -524,10 +549,13 @@ aside input {
 }
 
 .modalHolder:hover {
-  cursor: wait;
+  cursor: pointer;
 }
 
 .modalHolder {
+  width: 100%;
+  background-color: #0000007a;
+  height: 100vh;
   position: absolute;
   z-index: 4;
   width: 100%;

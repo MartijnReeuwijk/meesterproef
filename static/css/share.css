@@ -17,6 +17,7 @@
   padding: 10px;
 }
 
+.closeDetail,
 .socialHolderRelative button {
   position: absolute;
   top: 10px;
@@ -44,7 +45,7 @@
 
 /* maybe could have done this with JS */
 .shareIcon {
-  width: 100px;
+  width: 40%;
   height: 100px;
   max-height: 300px;
   margin: 10px auto;
@@ -52,7 +53,33 @@
   background-position: center;
   background-size: contain;
   cursor: pointer;
-  background-image: url("../images/socials/share.svg");
+  background-image: url("../images/icons/share-icon.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.shareIcon:hover{
+background-image: url("../images/icons/share-icon_color.svg");
+}
+
+.sharePath{
+  box-sizing: border-box;
+  width: 40%;
+  height: 100px;
+  max-height: 300px;
+  margin: auto;
+  cursor: pointer;
+  background-image: url(../images/icons/path-icon.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.shareHolders{
+display: flex;
+justify-content: space-between;
+}
+.sharePath:hover{
+background-image: url("../images/icons/path-icon_color.svg");
 }
 
 .instagram {
@@ -119,6 +146,7 @@
   display: none;
 }
 
+.closeDetail,
 .defaultButton {
   padding: 0;
   cursor: pointer;
