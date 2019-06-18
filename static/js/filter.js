@@ -4,10 +4,8 @@ const input = document.querySelectorAll('fieldset input')
 
 function getFilterdata () {
   return new Promise(async (resolve, reject) => {
-    // check op de - als die er is
     const lastValue = window.location.pathname.split('/').slice(-1)[0].split('-').slice(-1)[0]
     const url = window.location.protocol + '//' + window.location.host + '/' + 'filter' + '/' + lastValue
-    console.log(lastValue);
 
     try {
       const res = await fetch(url)
@@ -25,7 +23,7 @@ async function dataFilter (value) {
 }
 
 async function renderFilterdata () {
-  let filteredImages = [];
+  let filteredImages = []
   const filterdData = await dataFilter(this.value)
   const filterdDataId = filterdData.map(id => id.split('_')[0])
   for (let i = 0; i < 9; i++) {
