@@ -32,8 +32,8 @@
       </form>
 
     </div>
-    <h3>Historyh</h3>
-    <div class="history-container">
+    <h3>History</h3>
+    <div class="history-container borderRadius">
       <% path.forEach(img => { %>
       <article class="">
         <div class="">
@@ -50,7 +50,7 @@
 
     <!-- <h2>Related images</h2> -->
     <% newImgs.forEach(img => { %>
-      <button name="foto button" class="mainpageImage previewImage transition"  data-image="<%= img.split('_')[0] %>" data-shot="0">
+      <button name="foto button" class="mainpageImage previewImage fade borderRadius transition"  data-image="<%= img.split('_')[0] %>" data-shot="0">
         <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
       </button>
     <% }) %>
