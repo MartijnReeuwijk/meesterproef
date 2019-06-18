@@ -8,10 +8,12 @@ function random (amount = 9) {
     imgArray.push(images[Math.floor(Math.random() * images.length)])
   }
 
+  console.log(imgArray)
+
   return imgArray
 }
 
-function randomRelated (img) {
+function randomRelated (img, amount = 9) {
   return new Promise((resolve, reject) => {
     let newImgs = []
     const imgIndex = searchResults.findIndex(el => el['shot_id'] === `${img}_0`)
