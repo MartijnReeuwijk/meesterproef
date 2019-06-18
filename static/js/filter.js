@@ -4,8 +4,11 @@ const input = document.querySelectorAll('fieldset input')
 
 function getFilterdata () {
   return new Promise(async (resolve, reject) => {
-    const lastValue = window.location.pathname.split('/').slice(-1)[0].split('-')
+    // check op de - als die er is
+    const lastValue = window.location.pathname.split('/').slice(-1)[0].split('-').slice(-1)[0]
     const url = window.location.protocol + '//' + window.location.host + '/' + 'filter' + '/' + lastValue
+    console.log(lastValue);
+
     try {
       const res = await fetch(url)
       const data = await res.json()
