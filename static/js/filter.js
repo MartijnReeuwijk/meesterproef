@@ -17,15 +17,11 @@ function getFilterdata () {
   })
 }
 
-async function dataFilter (value) {
-  const data = await getFilterdata()
-  return data.results[value]
-}
-
 async function renderFilterdata () {
-  let filteredImages = []
-  const filterdData = await dataFilter(this.value)
-  const filterdDataId = filterdData.map(id => id.split('_')[0])
+  let filteredImages = [];
+  const filterdData = await getFilterdata(this.value)
+  const dataResults = filterdData.results[this.value]
+  const filterdDataId = dataResults.map(id => id.split('_')[0])
   for (let i = 0; i < 9; i++) {
     filteredImages.push(filterdDataId[i])
   }
