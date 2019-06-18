@@ -28,7 +28,23 @@ function related (id, amount = 9) {
   })
 }
 
+function getFilterdata () {
+  return new Promise(async (resolve, reject) => {
+    const lastValue = window.location.pathname.split('/').slice(-1)[0].split('-').slice(-1)[0]
+    const url = window.location.protocol + '//' + window.location.host + '/' + 'filter' + '/' + lastValue
+
+    try {
+      const res = await fetch(url)
+      const data = await res.json()
+      resolve(data)
+    } catch (err) {
+      reject(err)
+    }
+  })
+}
+
 export const data = {
   random,
-  related
+  related,
+  getFilterdata
 }
