@@ -9,6 +9,8 @@ function newImages (images) {
       const button = element.create('button', [
         'mainpageImage',
         'previewImage',
+        'borderRadius',
+        'fade',
         'transition'
       ])
 
