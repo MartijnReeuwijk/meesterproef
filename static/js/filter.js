@@ -1,15 +1,10 @@
-/* global localStorage */
-
 import { thumbnailsEventListener } from './index.js'
 import { render } from './partials/render.js'
 import { data } from './partials/data.js'
 import { timer } from './partials/timer.js'
 
 async function renderFilterdata () {
-  console.log(this.value)
   timer.stop()
-
-  localStorage.setItem('filter', this.value)
 
   let filteredImages = []
   const filterdData = await data.getFilterdata(this.value)
