@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="58" viewBox="0 0 63 58">
+  <defs>
+    <clipPath id="clip-color-icon_color">
+      <rect width="63" height="58"/>
+    </clipPath>
+  </defs>
+  <g id="color-icon_color" clip-path="url(#clip-color-icon_color)">
+    <ellipse id="Ellipse_91" data-name="Ellipse 91" cx="17.378" cy="17.378" rx="17.378" ry="17.378" transform="translate(1 3)" fill="#fff"/>
+    <ellipse id="Ellipse_92" data-name="Ellipse 92" cx="17.378" cy="17.378" rx="17.378" ry="17.378" transform="translate(26.745 3)" fill="#c9ceff"/>
+    <ellipse id="Ellipse_93" data-name="Ellipse 93" cx="17.378" cy="17.378" rx="17.378" ry="17.378" transform="translate(12.585 21.021)" fill="#3e49c1"/>
+  </g>
+</svg>

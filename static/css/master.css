@@ -59,13 +59,74 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   position: relative;
-  padding: 20px;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 .mainpageImage:nth-of-type(1) {
   transition: transform 2s linear;
 }
 
+label:focus,
+label:hover{
+background-color: #6c03ca2b;
+transition: .3s ease;
+cursor: pointer;
+}
+label{
+padding: 5px;
+position: relative;
+cursor: pointer;
+padding-left: 35px;
+}
+label:nth-of-type(1)::before{
+/* background-image: url("https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Alien-512.png"); */
+background-image: url("../images/icons/color-icon.svg");
+}
+label:nth-of-type(2)::before{
+background-image: url("https://image.flaticon.com/icons/svg/67/67745.svg");
+background-image: url("../images/icons/shape-icon.svg");
+}
+label:nth-of-type(3)::before{
+background-image: url("https://cdn0.iconfinder.com/data/icons/ui-14/100/ui14-39-512.png");
+background-image: url("../images/icons/movement-icon.svg");
+}
+label:nth-of-type(4)::before{
+/* background-image: url("https://cdn4.iconfinder.com/data/icons/home-objects-misc/32/poop-512.png"); */
+background-image: url("../images/icons/clutter-icon.svg");
+}
+label::before {
+  cursor: pointer;
+  background-position: 50%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  content: "";
+  width: 25px;
+  left: 3px;
+  height: 25px;
+  /* background-color: #f7f7f7; */
+  position: absolute;
+  border-radius: 50%;
+  top: 20%;
+}
+
+input:nth-of-type(1):checked+label::before{
+background-image: url("../images/icons/color-icon_color.svg");
+}
+input:nth-of-type(2):checked+label::before{
+background-image: url("../images/icons/shape-icon_color.svg");
+}
+input:nth-of-type(3):checked+label::before{
+background-image: url("../images/icons/movement-icon_color.svg");
+}
+input:nth-of-type(4):checked+label::before{
+background-image: url("../images/icons/clutter-icon_color.svg");
+}
+input[type="radio"]:checked+label {
+background-color: #6875fb;
+color: #fff;
+transition: .3s ease;
+}
 
 html {
   scroll-behavior: smooth;
@@ -75,6 +136,10 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5px;
+  padding: 20px;
+  max-height: 100vh;
+  overflow: scroll;
+  padding-left: 0px;
 }
 
 .mainpageImage {
@@ -88,13 +153,13 @@ html {
 
 .mainpageImage img {
   width: 100%;
-  height: auto;
-box-sizing: border-box;
+  /* height: auto; */
+  box-sizing: border-box;
 }
 
 .mainpageImage:focus,
 .mainpageImage:hover {
-  border: 5px solid #6c03ca;
+  border: 5px solid #6875fb;
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
@@ -109,21 +174,23 @@ box-sizing: border-box;
 }
 
 .history-container::-webkit-scrollbar-thumb {
-  background-color: #6c03ca;
+  background-color: #6875fb;
   border-radius: 4px;
 }
 
 main {
   grid-column: 2/7;
-  grid-row: 1/3;
+  /* grid-row: 1/3; */
 }
 
 aside {
   grid-column: 1/2;
-  grid-row: 2/3;
+  /* grid-row: 2/3; */
   display: flex;
   flex-direction: column;
   padding: 10px;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 .timer {
@@ -133,7 +200,7 @@ aside {
   border-radius: 50%;
   width: 140px;
   height: 140px;
-  border: 5px solid #6c02ca;
+  border: 5px solid #c1deff;
   align-self: center;
   display: flex;
   align-items: center;
@@ -144,7 +211,7 @@ aside {
   font-size: 30px;
   cursor: default;
   text-decoration: none;
-  color: #6c02ca;
+  color: #6875fb;
 }
 
 .timer a {
@@ -303,14 +370,9 @@ cursor: pointer;
   border: none;
 }
 
-.filter-small span,
-.filter-small span img {
-  height: 21px;
-}
-
 .current-pick {
-  margin-bottom: 70px;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -376,14 +438,22 @@ aside h3 {
   border-radius: 5px;
   margin: 20px;
 }
-fieldset{
-border: none;
-display: grid;
-grid-template-columns: 1fr 1fr;
-}
 
-fieldset input{
-/* display: none; */
+
+form div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #eee;
+  /* border: 1px solid #9c9a9a; */
+  border-radius: 14px;
+  overflow: hidden;
+}
+legend{
+text-align: center;
+}
+aside input{
+display: none;
+
 }
 
 .meta {

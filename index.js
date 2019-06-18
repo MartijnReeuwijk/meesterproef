@@ -46,13 +46,14 @@ function offline (req, res) {
 function search (req, res) {
   const imgs = req.url.split('/')[2].split('-')
   const recentImg = imgs[imgs.length - 1]
-
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   data.randomRelated(recentImg)
     .then(relatedImages => {
       res.render('search', {
         prevImg: recentImg,
         newImgs: relatedImages,
-        path: imgs
+        path: imgs,
+        url: fullUrl
       })
     })
     .catch(err => {
