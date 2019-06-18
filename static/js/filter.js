@@ -2,7 +2,7 @@ import { render } from './partials/render.js'
 import { data } from './partials/data.js'
 
 async function renderFilterdata () {
-  let filteredImages = []
+  let filteredImages = [];
   const filterdData = await data.getFilterdata(this.value)
   const dataResults = filterdData.results[this.value]
   const filterdDataId = dataResults.map(id => id.split('_')[0])
@@ -11,7 +11,7 @@ async function renderFilterdata () {
   }
   render.newImages(filteredImages)
 }
-const input = document.querySelectorAll('fieldset input')
+const input = document.querySelectorAll('form input')
 input.forEach(elem => {
   elem.addEventListener('click', renderFilterdata)
 })
