@@ -1,3 +1,5 @@
+/* global localStorage */
+
 import { thumbnailsEventListener } from '../index.js'
 import { data } from './data.js'
 import { render } from './render.js'
@@ -27,10 +29,26 @@ function start (interval) {
         await render.newImages(images)
 
         thumbnailsEventListener()
+
+        localStorage.removeItem('filter')
       } catch (err) {
         console.error(err)
       }
     }
+  }, interval)
+}
+
+function related (images, interval) {
+  timerVar = setInterval(async () => {
+    let newImages = []
+
+    for (let i = 0; i < 9; i++) {
+      newImages.push(images[Math.floor(Math.random() * images.length)])
+    }
+
+    await render.newImages(newImages)
+
+    thumbnailsEventListener()
   }, interval)
 }
 
@@ -49,5 +67,6 @@ function changeInterval (interval) {
 export const timer = {
   start,
   stop,
-  changeInterval
+  changeInterval,
+  related
 }
