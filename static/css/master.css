@@ -425,7 +425,7 @@ form div{
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #eee;
-  border: 1px solid #9c9a9a;
+  /* border: 1px solid #9c9a9a; */
   border-radius: 14px;
   overflow: hidden;
 }
