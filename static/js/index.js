@@ -15,7 +15,7 @@ export function thumbnailsEventListener () {
 }
 
 function init () {
-  timer.start(5000000)
+  timer.start(5000)
   thumbnailsEventListener()
 }
 

@@ -10,6 +10,7 @@ function newImages (images) {
         'mainpageImage',
         'previewImage',
         'borderRadius',
+        'fade',
         'transition'
       ])
 
