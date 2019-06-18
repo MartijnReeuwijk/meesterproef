@@ -13,15 +13,16 @@ body {
   height: 50px;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: black;
   border: 1px solid #6c02ca;
-  background-color: #6c02ca;
+  background-color: #f7f7f7;
+
   line-height: 50px;
 }
 
 .homebutton:hover {
-  color: black;
-  background-color: white;
+  color: #fff;
+  background-color: #6875fb;
 }
 
 /* .displayFlex {
@@ -31,7 +32,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 } */
-.mainpageImage:before {
+
+
+/* .mainpageImage:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -55,7 +58,7 @@ body {
   transform: translateX(-50%) translateY(-50%);
   border-right: 5px solid #fff;
   border-left: 5px solid #fff;
-}
+} */
 
 .bigAssContainer {
   position: relative;
@@ -160,24 +163,38 @@ html {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: calc(33% - 2px);
+  width: 33%;
   min-width: 250px;
-  border: 1px solid black;
+  cursor: pointer;
 }
+
+.mainpageImage:hover {
+  background-color: #d1d5fd;
+  transition: .3s ease;
+  opacity: 1;
+}
+
+button,
+button:active,
+button:focus {
+border:none;
+outline: none;
+}
+
 
 .mainpageImage img {
-  /* height: auto; */
   box-sizing: border-box;
   width: 100%;
+  pointer-events: none
 }
 
-.mainpageImage:focus,
+/* .mainpageImage:focus,
 .mainpageImage:hover {
   box-sizing: border-box;
   cursor: pointer;
   border: 5px solid #6875fb;
   outline: none;
-}
+} */
 
 .history-container::-webkit-scrollbar {
   width: 7px;
@@ -333,6 +350,7 @@ aside {
 
 .history-container article div img {
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .history-container article div {
@@ -458,6 +476,7 @@ aside h3 {
 form div {
   display: grid;
   overflow: hidden;
+  width: 250px;
   /* border: 1px solid #9c9a9a; */
   border-radius: 14px;
   background-color: #eee;
