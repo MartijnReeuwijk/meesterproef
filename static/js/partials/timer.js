@@ -2,8 +2,10 @@ import { thumbnailsEventListener } from '../index.js'
 import { data } from './data.js'
 import { render } from './render.js'
 
+let timerVar
+
 function start (interval) {
-  setInterval(async () => {
+  timerVar = setInterval(async () => {
     const url = window.location.href
     const urlParts = url.split('/')
     const images = urlParts[urlParts.length - 1].split('-')
@@ -32,6 +34,35 @@ function start (interval) {
   }, interval)
 }
 
+function related (images, interval) {
+  timerVar = setInterval(async () => {
+    let newImages = []
+
+    for (let i = 0; i < 9; i++) {
+      newImages.push(images[Math.floor(Math.random() * images.length)])
+    }
+
+    await render.newImages(newImages)
+
+    thumbnailsEventListener()
+  }, interval)
+}
+
+function stop () {
+  clearInterval(timerVar)
+
+  console.log('Stopped the timer')
+}
+
+function changeInterval (interval) {
+  stop()
+
+  start(interval)
+}
+
 export const timer = {
-  start
+  start,
+  stop,
+  changeInterval,
+  related
 }

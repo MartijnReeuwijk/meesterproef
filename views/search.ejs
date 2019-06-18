@@ -6,9 +6,9 @@
 
   <aside class="">
     <div class="timer">
-      <a href="">
-        <</a> <p>4</p>
-          <a href="">></a>
+      <a href=""></a>
+      <p>4</p>
+      <a href=""></a>
     </div>
     <div class="current-pick">
       <h3>Current video</h3>
@@ -17,6 +17,7 @@
       </div>
 
       <form class="" action="index.html" method="post">
+
         <legend>Filter related</legend>
         <div>
           <input id="filter-kleur" type="radio" name="filter" value="color">
@@ -28,10 +29,11 @@
           <input id="filter-textuur" type="radio" name="filter" value="clutter">
           <label for="filter-textuur">Clutter</label>
         </div>
+
       </form>
 
     </div>
-    <h3>viewing path</h3>
+    <h3>Historyh</h3>
     <div class="history-container">
       <% path.forEach(img => { %>
       <article class="">
@@ -49,10 +51,11 @@
 
     <!-- <h2>Related images</h2> -->
     <% newImgs.forEach(img => { %>
-
-    <img src="../images/thumbnails/thumbnails_large/<%= img.split('_')[0] %>/<%= img %>.png" data-image="<%= img %>" data-shot="0" alt="">
+      <button name="foto button" class="mainpageImage previewImage transition"  data-image="<%= img.split('_')[0] %>" data-shot="0">
+        <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
+      </button>
     <% }) %>
 
   </main>
-
+<script src="/js/filter.js" type="module" charset="utf-8"></script>
   <%- include('./partials/footer'); -%>
