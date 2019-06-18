@@ -51,9 +51,13 @@
 
     <!-- <h2>Related images</h2> -->
     <% newImgs.forEach(img => { %>
-      <button name="foto button" class="mainpageImage previewImage fade borderRadius transition"  data-image="<%= img.split('_')[0] %>" data-shot="0">
+
+      <div class="mainpageImage">
+        <button class="prevButton" type="button" name="button">Preview</button>
+        <button name="foto button" class=" previewImage fade borderRadius transition"  data-image="<%= img.split('_')[0] %>" data-shot="0">
         <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
       </button>
+      </div>
     <% }) %>
 
   </main>

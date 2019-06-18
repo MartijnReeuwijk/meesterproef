@@ -18,9 +18,12 @@
 
   <main class="displayFlex">
   <% for(var i = 0;  i < clips.length; i++) { %>
-    <button name="foto button" class="mainpageImage previewImage transition"  data-image="<%= clips[i] %>" data-shot="0">
+    <div class="mainpageImage">
+      <button class="prevButton" type="button" name="button">Preview</button>
+      <button name="foto button" class=" previewImage transition"  data-image="<%= clips[i] %>" data-shot="0">
       <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
-    </button>
+      </button>
+    </div>
 <% } %>
   </main>
 
