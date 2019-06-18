@@ -19,12 +19,13 @@ app
   .get('/', index)
   .get('/offline', offline)
   .get('/random/:id', sendRandom)
-  .get('/related/:id/:amount', sendRelated)
   .get('/search/:id', search)
   .get('/detail/:id', detail)
   .post('/share', share)
   .get('/share/:id', shareUrl)
   .get('/ob-video/:id', sendMetadata)
+  .get('/filter/:id', sendFiltered)
+  .get('/related/:id/:amount', sendRelated)
 
   .use(notFound)
 
@@ -127,6 +128,11 @@ function sendRandom (req, res) {
   const amount = req.params.id
 
   res.json(data.random(amount))
+}
+
+function sendFiltered (req, res) {
+  const imageId = req.params.id
+  res.json(data.related(imageId))
 }
 
 function sendRelated (req, res) {

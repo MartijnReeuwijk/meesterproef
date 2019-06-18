@@ -439,6 +439,7 @@ aside h3 {
   margin: 20px;
 }
 
+
 form div{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -452,6 +453,7 @@ text-align: center;
 }
 aside input{
 display: none;
+
 }
 
 .meta {
