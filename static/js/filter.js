@@ -1,4 +1,4 @@
-import { thumbnailsEventListener } from '../index.js'
+import { thumbnailsEventListener } from './index.js'
 import { render } from './partials/render.js'
 import { data } from './partials/data.js'
 
