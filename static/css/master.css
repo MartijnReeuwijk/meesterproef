@@ -352,10 +352,20 @@ aside {
   margin: auto;
   background-color: #e0e0e0;
 }
+.history-container article{
+  width: 100%;
+      height: auto;
+      /* margin: 5px; */
+      display: grid;
+}
 
 .history-container article div {
-  display: flex;
   padding: 5px;
+}
+
+.history-container article div img{
+width: 100%;
+height:auto;
 }
 
 .filter-small span {
