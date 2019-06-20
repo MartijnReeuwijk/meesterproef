@@ -5,11 +5,11 @@ historyImage.forEach(elem => {
 
 function goBackinHistory(){
   const historyGo = this.getAttribute('data-image')
-  console.log(historyGo);
   const url = window.location.href;
-  console.log(url.split('-'));
-  // .split('-')
-  // const history =
-  // console.log(history);
+  const selectedHistory = url.split('-')
+  const index = selectedHistory.indexOf(historyGo)
+  // Oke was hier hard aan het kutten en kwam er niet uit
+  // heb al de data, wat dus moet gebeuren heb al een index om tematchen en dan de > items deleten
+  window.location.href = historyGo
 
 }
