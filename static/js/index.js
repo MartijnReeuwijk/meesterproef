@@ -2,7 +2,7 @@ import { url } from './partials/url.js'
 import { timer } from './partials/timer.js'
 
 export function thumbnailsEventListener () {
-  let thumbnails = document.getElementsByClassName('mainpageImage')
+  let thumbnails = document.getElementsByClassName('previewImage')
 
   for (let i = 0; i < thumbnails.length; i++) {
     thumbnails[i].addEventListener('click', e => {
@@ -15,7 +15,7 @@ export function thumbnailsEventListener () {
 }
 
 function init () {
-  timer.start(5000)
+  timer.start(50000000)
   thumbnailsEventListener()
   document.querySelector('.history-container').scrollTop = 0
 }

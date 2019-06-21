@@ -23,40 +23,7 @@ body {
 
 }
 
-/* .displayFlex {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
 
-
-/* .mainpageImage:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(100% - 20px);
-  height: 100%;
-  content: '';
-  transition: width .15s;
-  transform: translateX(-50%) translateY(-50%);
-  border-top: 7px solid #fff;
-  border-bottom: 6.5px solid #fff;
-}
-
-.mainpageImage:after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: calc(100% - 20px);
-  content: '';
-  transition: height .15s;
-  transform: translateX(-50%) translateY(-50%);
-  border-right: 5px solid #fff;
-  border-left: 5px solid #fff;
-} */
 
 .bigAssContainer {
   position: relative;
@@ -73,8 +40,7 @@ body {
 label:focus,
 label:hover {
   cursor: pointer;
-  transition: .3s ease;
-  background-color: #6c03ca2b;
+    background-color: #6c03ca2b;
 }
 
 
@@ -139,8 +105,7 @@ input:nth-of-type(4):checked+label::before {
 }
 
 input[type="radio"]:checked+label {
-  transition: .3s ease;
-  color: #fff;
+    color: #fff;
   background-color: #6875fb;
 }
 
@@ -171,9 +136,36 @@ html {
 
 .mainpageImage:hover {
   background-color: #d1d5fd;
-  transition: .3s ease;
   opacity: 1;
 }
+
+.prevButton{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #00000078;
+  height: 50px;
+  color: #fff;
+  padding: 7px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  z-index: 20;
+  cursor: pointer;
+}
+.previewImage{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.mainpageImage:hover .prevButton{
+opacity: 1;
+}
+.mainpageImage .prevButton{
+opacity: 0;
+transition: .3s ease;}
+
 
 button,
 button:active,
@@ -294,8 +286,7 @@ aside {
 }
 
 .mainpageImage:hover div {
-  transition: .3s ease;
-  opacity: 1;
+    opacity: 1;
 }
 
 .mainpageImage:nth-of-type(1) {
@@ -332,8 +323,7 @@ aside {
 }
 
 .popModal a:hover {
-  transition: .3s ease;
-  background-color: #6c02ca;
+    background-color: #6c02ca;
 }
 
 .history-container {
@@ -443,8 +433,7 @@ aside {
   width: 37%;
   max-width: 37%;
   margin: auto;
-  transition: .3s ease;
-  background-color: #fff;
+    background-color: #fff;
   -webkit-box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -473,8 +462,7 @@ aside h3 {
 
 .videoPrev:hover {
   cursor: pointer;
-  transition: .3s ease;
-  opacity: 1;
+    opacity: 1;
 }
 
 .videoPrev {
