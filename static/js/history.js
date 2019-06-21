@@ -1,15 +1,21 @@
-const historyImage = document.querySelectorAll('.history-container article div img')
-historyImage.forEach(elem => {
-  elem.addEventListener('click', goBackinHistory)
-})
+const history = {
+  container: document.querySelector('.history-container'),
+  images: document.querySelectorAll('.history-container img'),
+  back: e => {
+    const imgNumber = e.target.dataset.number
 
-function goBackinHistory(){
-  const historyGo = this.getAttribute('data-image')
-  const url = window.location.href;
-  const selectedHistory = url.split('-')
-  const index = selectedHistory.indexOf(historyGo)
-  // Oke was hier hard aan het kutten en kwam er niet uit
-  // heb al de data, wat dus moet gebeuren heb al een index om tematchen en dan de > items deleten
-  window.location.href = historyGo
+    const urlParts = window.location.href.split('/')
+    const historyUrl = urlParts[urlParts.length - 1]
+    const historyItems = historyUrl.split('-')
 
+    const newHistory = historyItems.filter((item, i) => {
+      if (i <= imgNumber) return true
+    })
+
+    window.location.href = `/search/${newHistory.join('-')}`
+  }
 }
+
+history.images.forEach(elem => {
+  elem.addEventListener('click', history.back)
+})

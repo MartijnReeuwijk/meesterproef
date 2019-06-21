@@ -35,12 +35,8 @@
     </div>
     <h3>History</h3>
     <div class="history-container borderRadius">
-      <% path.forEach(img => { %>
-      <article class="">
-        <div class="">
-          <img src="../images/thumbnails/thumbnails_large/<%= img %>/<%= img %>_0.png" data-image="<%= img %>" data-shot="0" alt="">
-        </div>
-      </article>
+      <% path.forEach((img, i) => { %>
+        <img src="../images/thumbnails/thumbnails_large/<%= img %>/<%= img %>_0.png" data-image="<%= img %>" data-shot="0" data-number="<%= i %>" alt="">
       <% }) %>
     </div>
     <%- include('./partials/shareHolder'); -%>
