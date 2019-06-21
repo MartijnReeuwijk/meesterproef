@@ -1,5 +1,4 @@
 const history = {
-  container: document.querySelector('.history-container'),
   images: document.querySelectorAll('.history-container img'),
   back: e => {
     const imgNumber = e.target.dataset.number
