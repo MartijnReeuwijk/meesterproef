@@ -20,6 +20,7 @@ app
   .get('/offline', offline)
   .get('/random/:id', sendRandom)
   .get('/search/:id', search)
+  .get('/end/:id', endScreen)
   .get('/detail/:id', detail)
   .post('/share', share)
   .get('/share/:id', shareUrl)
@@ -73,6 +74,15 @@ async function detail (req, res) {
 
   res.render('detail', {
     data: data
+  })
+}
+
+function endScreen (req, res) {
+  const id = req.params.id
+  const images = id.split('-')
+
+  res.render('end', {
+    images: images
   })
 }
 
