@@ -30,9 +30,8 @@ body {
 
   display: grid;
   overflow: scroll;
-
+  height: 100vh;
   max-height: 100vh;
-
   grid-template-columns: repeat(6, 1fr);
 }
 
@@ -130,7 +129,7 @@ html {
 
   max-height: 100vh;
   padding: 10px 0;
-  padding-left: 0px;
+
 }
 
 .mainpageImage {
@@ -239,7 +238,9 @@ aside {
   padding: 10px;
 
   grid-column: 1/2;
-  /* overflow: scroll; */
+  text-align: center;
+  font-size: 1.17em;
+  overflow: scroll;
 }
 
 .timer {
@@ -367,43 +368,31 @@ aside {
 
 .history-container {
   display: flex;
+
+  background-color: #e0e0e0;
   overflow-y: scroll;
   align-items: center;
   flex-direction: column-reverse;
-
-  width: 210px;
-  width: 140px;
-  height: 170px;
-  height: 170px;
-  max-height: 300px;
-  max-height: 300px;
-  margin: auto;
-  margin: auto;
-  padding: 10px;
-
-  background-color: #e0e0e0;
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  /* margin: auto; */
   background-color: #e0e0e0;
 }
-
-.history-container article div img {
+.history-container article{
   width: 100%;
-
-  cursor: pointer;
-
-  border-radius: 5px;
+      height: auto;
+      /* margin: 5px; */
+      display: grid;
 }
 
 .history-container article div {
-  overflow: hidden;
+  padding: 5px;
+}
 
-  width: 190px;
-  width: 120px;
-  height: 95px;
-  height: 60px;
-  padding: 10px;
-  padding: 10px;
-
-  text-align: center;
+.history-container article div img{
+width: 100%;
+height:auto;
 }
 
 .filter-small span {
@@ -463,16 +452,17 @@ aside {
   position: relative;
 
   margin-top: 10px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .current-pick .video-placeholder {
-  /* background-color: #eee;
-  max-width: 160px; */
-  height: 90px;
+  height: 150px;
   margin: auto;
 
   text-align: center;
+}
+.current-pick .video-placeholder img{
+  height: 100%;
 }
 
 .current-pick .filter-small_dropdown {
@@ -559,14 +549,12 @@ transform: translateY(-50%);
 form div {
   display: grid;
   overflow: hidden;
-
   width: 250px;
-  /* border: 1px solid #9c9a9a; */
-
   border-radius: 14px;
   background-color: #eee;
 
   grid-template-columns: 1fr 1fr;
+  width: 100%;
 }
 
 legend {
