@@ -5,13 +5,6 @@ function newImages (images) {
     const main = document.querySelector('main')
     let imgs = []
 
-    // <div class="mainpageImage">
-    //   <button name="button"class="prevButton borderRadius" data-image="<%= img.split('_')[0] %>" type="button">Preview</button>
-    //   <button name="foto button" class="previewImage previewImageSearch fade borderRadius transition" data-image="<%= img.split('_')[0] %>" data-shot="0">
-    //     <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
-    //   </button>
-    // </div>
-
     images.forEach(image => {
       const div = element.create('div', 'mainpageImage')
 
@@ -21,10 +14,9 @@ function newImages (images) {
       ])
       element.text('Preview', previewButton)
 
-      // previewButton.dataset.  =
-
       const imageButton = element.create('button', [
         'mainpageImage',
+        'previewImageSearch'
         'previewImage',
         'borderRadius',
         'fade',
@@ -42,8 +34,6 @@ function newImages (images) {
       div.appendChild(imageButton)
       div.appendChild(previewButton)
       imageButton.appendChild(img)
-      // console.log(imageButton)
-      console.log(previewButton)
 
 
       imgs.push(div)
