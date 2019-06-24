@@ -1,4 +1,5 @@
 import { thumbnailsEventListener } from '../index.js'
+import { addPreviewListeners } from './preview.js'
 import { data } from './data.js'
 import { render } from './render.js'
 
@@ -30,6 +31,7 @@ function start (interval) {
         await render.newImages(images)
 
         thumbnailsEventListener()
+        addPreviewListeners()
       } catch (err) {
         console.error(err)
       }
@@ -41,6 +43,7 @@ function start (interval) {
         fade(interval - 500)
 
         thumbnailsEventListener()
+        addPreviewListeners()
       } catch (err) {
         console.error(err)
       }
@@ -61,6 +64,7 @@ function related (images, interval) {
     fade(interval - 500)
 
     thumbnailsEventListener()
+    addPreviewListeners()
   }, interval)
 }
 

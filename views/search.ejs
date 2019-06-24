@@ -20,12 +20,12 @@
         <legend>Filter related</legend>
         <div>
           <input id="filter-kleur" type="radio" name="filter" value="colour">
-          <label for="filter-kleur"title="Filter the images on colour" >Color</label>
-          <input id="filter-vorm" type="radio" name="filter"  value="shape">
+          <label for="filter-kleur" title="Filter the images on colour">Color</label>
+          <input id="filter-vorm" type="radio" name="filter" value="shape">
           <label for="filter-vorm" title="Filter the images on shape">Shape</label>
-          <input id="filter-beweging" type="radio" name="filter"  value="movement">
+          <input id="filter-beweging" type="radio" name="filter" value="movement">
           <label for="filter-beweging" title="Filter the images on movement">Movement</label>
-          <input id="filter-textuur" type="radio" name="filter"  value="clutter">
+          <input id="filter-textuur" type="radio" name="filter" value="clutter">
           <label for="filter-textuur" title="Filter the images on complexity">Complexity</label>
         </div>
 
@@ -47,13 +47,19 @@
 
     <!-- <h2>Related images</h2> -->
     <% newImgs.forEach(img => { %>
-      <button name="foto button" class="mainpageImage previewImage fade borderRadius transition"  data-image="<%= img.split('_')[0] %>" data-shot="0">
+
+    <div class="mainpageImage">
+      <button name="button"class="prevButton borderRadius" data-image="<%= img.split('_')[0] %>" type="button">Preview</button>
+      <button name="foto button" class="previewImage previewImageSearch fade borderRadius transition" data-image="<%= img.split('_')[0] %>" data-shot="0">
         <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
       </button>
+    </div>
     <% }) %>
 
   </main>
-<script src="/js/filter.js" type="module" charset="utf-8"></script>
-<script src="/js/history.js" async charset="utf-8"></script>
+
+  <script src="/js/filter.js" type="module" charset="utf-8"></script>
+  <script src="/js/history.js" async charset="utf-8"></script>
+  <script src="/js/partials/preview.js" type="module" charset="utf-8"></script>
 
   <%- include('./partials/footer'); -%>

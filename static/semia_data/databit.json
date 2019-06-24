@@ -204,3 +204,126 @@ Data uit de API van openbeelden {
     "_xsi:schemaLocation": "http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"
   }
 }
+
+
+Na request
+
+
+{
+  "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+  "xmlns": "http://www.openarchives.org/OAI/2.0/",
+  "xsi:schemaLocation": "http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd",
+  "responseDate": "2019-06-21T15:02:56Z",
+  "request": {
+    "identifier": "oai:openimages.eu:54836",
+    "metadataPrefix": "oai_dc",
+    "verb": "GetRecord",
+    "$t": "https://openbeelden.nl/feeds/oai/?verb=GetRecord&amp;identifier=oai:openimages.eu:54836&amp;metadataPrefix=oai_dc"
+  },
+  "GetRecord": {
+    "record": {
+      "header": {
+        "identifier": "oai:openimages.eu:54836",
+        "datestamp": "2016-01-05T13:03:35Z",
+        "setSpec": "beeldengeluid"
+      },
+      "metadata": {
+        "oai_dc:dc": {
+          "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+          "xmlns:dc": "http://purl.org/dc/elements/1.1/",
+          "xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+          "xsi:schemaLocation": "http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd",
+          "dc:title": [{
+            "xml:lang": "nl",
+            "$t": "Zestig jaar Amsterdam Centraal"
+          }, {
+            "xml:lang": "en",
+            "$t": "Sixty years of Amsterdam Central Station"
+          }],
+          "dc:creator": [{
+            "xml:lang": "nl",
+            "$t": "Polygoon-Profilti (producent) / Nederlands Instituut voor Beeld en Geluid (beheerder)"
+          }, {
+            "xml:lang": "en",
+            "$t": "Polygoon-Profilti (producer) / Netherlands Institute for Sound and Vision (curator)"
+          }],
+          "dc:subject": [{
+            "xml:lang": "nl",
+            "$t": "arbeiders"
+          }, {
+            "xml:lang": "nl",
+            "$t": "spoorwegen"
+          }, {
+            "xml:lang": "nl",
+            "$t": "stations"
+          }, {
+            "xml:lang": "nl",
+            "$t": "treinen"
+          }, {
+            "xml:lang": "nl",
+            "$t": "Centraal Station"
+          }, {
+            "xml:lang": "nl",
+            "$t": "NS"
+          }, {
+            "xml:lang": "en",
+            "$t": "workers"
+          }, {
+            "xml:lang": "en",
+            "$t": "railways"
+          }, {
+            "xml:lang": "en",
+            "$t": "stations"
+          }, {
+            "xml:lang": "en",
+            "$t": "trains"
+          }, {
+            "xml:lang": "en",
+            "$t": "Centraal Station"
+          }, {
+            "xml:lang": "en",
+            "$t": "NS"
+          }],
+          "dc:description": [{
+            "xml:lang": "nl",
+            "$t": "Bioscoopjournaals waarin Nederlandse onderwerpen van een bepaalde week worden gepresenteerd.\n\nHet door Cuypers ontworpen Centraal Station te Amsterdam is 60 jaar geleden in gebruik genomen. Impressie van de gang van zaken op dit station. SHOTS: - ext. station; - div. shots van drommen reizigers: ze gaan het station uit en in; lopen door de centrale hal; staan in rijen voor de loketten en kopen kaartjes; lopen door de tunnels en over de perrons; - div. shots van spoorwegpersoneel: kaartjesverkoper met kaartjesautomaat; stationschef steekt \"spiegelei\" omhoog; in een kantoor overlegt hoofdkantoorschef Putman met zijn mensen; monteurs sleutelen aan de bovenleiding; spoorwegarbeiders inspecteren een wissel, lopen met een kan smeerolie de wielen van een stoomlocomotief na of vullen de tender van een stoomlocomotief met water, onderhouden de rails; een rangeerder hangt aan de cabine van een voorbijrijdende locomotief; in het grote seinhuis bedient een man de schakelaars voor de elektrisch bediende wissels en de seinpalen; in het storingsbureau observeren mannen op een groot tableau de treinenloop die mbv verklikkerlichtjes op een schema wordt aangegeven; - div. shots van div. treinen die het station in- of uitrijden; zowel stoomtreinen als elektrische treinen."
+          }, {
+            "xml:lang": "en",
+            "$t": "Newsreels in which Dutch subjects of a certain week are presented.\n\nThe Central Station in Amsterdam, which was designed by Cuypers, was brought into use sixty years ago. Impression of the daily routine at this station. SHOTS: - ext. station; several shots of throngs of passengers: they enter and exit the station; walk through the central hall; stand in line for the ticket offices and buy tickets; walk through the tunnels and across the platforms; - several shots of the railway personnel: ticket salesman with ticket machine; stationmaster holds up his sign; in an office the head office chief Putman deliberates with his people; mechanics work on the overhead wire; railway workers inspect a switch, check the wheels of a steam locomotive with a can of lubricant oilor fill the tender of a steam locomotive with water, maintain the rails; a shunter hangs from the cabin of a passing locomotive; in the large signal box a man operates the switches of the electrically operated switches and the signals; in the disturbance bureay men observe the train service on a large board, which is made visible with indicator lights in a diagram; - several shots of trains entering and leaving the station; steam trains as well as electrical trains."
+          }],
+          "dc:publisher": [{
+            "xml:lang": "nl",
+            "$t": "Nederlands Instituut voor Beeld en Geluid"
+          }, "https://www.openbeelden.nl/users/beeldengeluid"],
+          "dc:date": "1949-10-29",
+          "dc:type": "Moving Image",
+          "dc:format": ["https://openbeelden.nl/files/54/54849.54835.WEEKNUMMER494-HRE00018B07.mp4", "https://openbeelden.nl/files/54/54843.54835.WEEKNUMMER494-HRE00018B07.ogv", "https://openbeelden.nl/files/54/54846.54835.WEEKNUMMER494-HRE00018B07.ogv", "https://openbeelden.nl/files/54/54855.54835.WEEKNUMMER494_HRE00018B07.m3u8", "https://openbeelden.nl/files/54/54852.54835.WEEKNUMMER494-HRE00018B07.ts", "https://openbeelden.nl/files/54/54839.54835.WEEKNUMMER494-HRE00018B07.mpeg", "https://openbeelden.nl/files/54/54835.WEEKNUMMER494-HRE00018B07.mpg", "https://openbeelden.nl/images/604281/Zestig_jaar_Amsterdam_Centraal_%280_58%29.png"],
+          "dc:identifier": "518431",
+          "dc:source": [{
+            "xml:lang": "nl",
+            "$t": "WEEKNUMMER494-HRE00018B07"
+          }, {
+            "xml:lang": "en",
+            "$t": "WEEKNUMMER494-HRE00018B07"
+          }],
+          "dc:relation": {
+            "xml:lang": "nl"
+          },
+          "dc:mediator": {
+            "xml:lang": "nl",
+            "$t": "Wikimedia Commons"
+          },
+          "dc:language": "nl",
+          "dc:coverage": [{
+            "xml:lang": "nl",
+            "$t": "Amsterdam"
+          }, {
+            "xml:lang": "nl",
+            "$t": "Nederland"
+          }],
+          "dc:rights": "https://creativecommons.org/licenses/by-sa/3.0/nl/"
+        }
+      }
+    }
+  }
+}
