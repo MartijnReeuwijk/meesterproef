@@ -53,8 +53,8 @@
     <% newImgs.forEach(img => { %>
 
     <div class="mainpageImage">
-      <button name="button"class="prevButton borderRadius" type="button">Preview</button>
-      <button name="foto button" class=" previewImage fade borderRadius transition" data-image="<%= img.split('_')[0] %>" data-shot="0">
+      <button name="button"class="prevButton borderRadius" data-image="<%= img.split('_')[0] %>" type="button">Preview</button>
+      <button name="foto button" class="previewImage previewImageSearch fade borderRadius transition" data-image="<%= img.split('_')[0] %>" data-shot="0">
         <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
       </button>
     </div>
@@ -62,4 +62,6 @@
 
   </main>
   <script src="/js/filter.js" type="module" charset="utf-8"></script>
+  <script src="/js/partials/preview.js" type="module" charset="utf-8"></script>
+
   <%- include('./partials/footer'); -%>
