@@ -16,7 +16,7 @@ function newImages (images) {
 
       const imageButton = element.create('button', [
         'mainpageImage',
-        'previewImageSearch'
+        'previewImageSearch',
         'previewImage',
         'borderRadius',
         'fade',

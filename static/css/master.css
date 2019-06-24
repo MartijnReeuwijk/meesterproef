@@ -240,7 +240,6 @@ aside {
   grid-column: 1/2;
   text-align: center;
   font-size: 1.17em;
-  overflow: scroll;
 }
 
 .timer {
@@ -378,6 +377,9 @@ aside {
   max-height: 200px;
   /* margin: auto; */
   background-color: #e0e0e0;
+}
+.history-container img {
+  margin: 5px 0px;
 }
 .history-container article{
   width: 100%;
