@@ -7,8 +7,14 @@ const openbeelden = require('./partials/openbeelden')
 const cronJobs = require('./partials/cronJobs')
 const cron = require('node-cron')
 const db = require('./partials/db')
+const config = require('./config.json')
 
-db.init()
+if (config.enableCustomUrl) {
+  db.init()
+  app
+    .post('/share', share)
+    .get('/share/:id', shareUrl)
+}
 
 app
   .set('view engine', 'ejs')
@@ -21,8 +27,7 @@ app
   .get('/random/:id', sendRandom)
   .get('/search/:id', search)
   .get('/detail/:id', detail)
-  .post('/share', share)
-  .get('/share/:id', shareUrl)
+
   .get('/ob-video/:id', sendMetadata)
   .get('/filter/:id', sendFiltered)
   .get('/related/:id/:amount', sendRelated)

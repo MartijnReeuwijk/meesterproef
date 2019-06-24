@@ -26,6 +26,12 @@ function image (src, alt, cssClass) {
   return img
 }
 
+function text (content, parent) {
+  const text = document.createTextNode(content)
+
+  parent.appendChild(text)
+}
+
 function update (el, elements, title) {
   return new Promise((resolve, reject) => {
     this.removeChildren(el)
@@ -55,6 +61,7 @@ function appendChildren (el, elements) {
 export const element = {
   create,
   image,
+  text,
   update,
   removeChildren,
   appendChildren
