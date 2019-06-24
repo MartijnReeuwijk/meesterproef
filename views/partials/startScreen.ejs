@@ -1,18 +1,103 @@
 <!doctype html>
 <div class="intro-overlay">
 
-  </div>
+</div>
 <section class="intro">
-  <h1>Related images</h1>
-  <button type="button" name="button">Skip intro</button>
-  <div class="overlay-timer">
-  <p>This is how much time you have till the next loop</p>
-  <p></p>
+  <h1>Semia film data</h1>
+  <button class="skipper" type="button" name="button">Skip Tutorial</button>
+  <div class="explanation-container hidden">
+    <h3 class="tutorial-names">With this app you can view an archive of 300,000 films and corresponding shots from these films</h3>
+    <div class="tutorial-container">
+      <div class="overlay-timer">
+        <!-- <p><span class="timeSeconds">9</span><span>s</span></p> -->
+      </div>
+    </div>
+    <p class="tutorial-explanation">The database and the app is built around relations. Each and every shot has been compared to every other shot in the databse to see in which ways they relate to one another. In this app you will explore the database by viewing shots related to one another leaving a path films in your wake.</p>
+    <button class="next" type="button" name="button">Next ></button>
   </div>
-  <p></p>
-  <div class="expl-txt">
-    <p>Navigeer door de video's op een exploratieve manier</p>
-    <p>Google API integratie zelfrijdende auto's crypto currency Bluetooth connectability</p>
-    <p>Explaining how to</p>
-  </div>
+
+
+  <article class="testGrid">
+    <aside class="hidden">
+
+      <div class="PreviewCont">
+        <div class="preview"></div>
+        <form action="">
+          <legend>Filter related on</legend>
+          <input id="filter-kleur" type="radio" name="filter" value="color">
+          <label for="filter-kleur">Color</label>
+          <input id="filter-vorm" type="radio" name="filter" value="shape">
+          <label for="filter-vorm">Shape</label>
+          <input id="filter-beweging" type="radio" name="filter" value="movement">
+          <label for="filter-beweging">Movement</label>
+          <input id="filter-textuur" type="radio" name="filter" value="clutter">
+          <label for="filter-textuur">Clutter</label>
+        </form>
+        <!-- <p>Your viewing path will be displayed here</p> -->
+      </div>
+      <h3>Path</h3>
+      <div class="testHistory"></div>
+      <h3>Share</h3>
+      <div class="shareHolders">
+
+        <div class="shareIcon shadow transition">
+
+        </div>
+        <div class="sharePath shadow transition">
+
+        </div>
+      </div>
+
+    </aside>
+    <section class="displayFlex hidden">
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
+      <article>
+        <p>This block represents a still from a film scene</p>
+        <p>You can preview this shot or simply click to view related stills</p> <button class="tutorial-prevBtn transition">Preview</button>
+      </article>
     </section>
+    <div class="expl-txt">
+      <p>We're going to brake down the application into sections and explain the functionalities of each one</p>
+      <p>We have an immense dataset full of still frames from thousands of films</p>
+      <p>We have made an app with which you can navigate through the data in an explorative way</p>
+      <p>Each still and each shot is related to others in one of four ways</p>
+      <p>color, movement, shape and visual complexity</p>
+      <button class="starter" type="button" name="button">Start tutorial</button>
+
+    </div>
+  </article>
+  <h3 class="hidden">Every 10 seconds your'e shown a new 9 related stills.</h3>
+  <h3 class="hidden">The loop is infinite so don't worry about missing a loop :-)</h3>
+</section>
+<script src="/js/partials/startScreen.js"></script>
