@@ -60,15 +60,7 @@ const tHistory = {
 }
 const tShare = {
   name: "The fourth section is sharing",
-  demo: `<div class="shareHolders">
-
-  <div class="shareIcon shadow transition">
-
-  </div>
-  <div class="sharePath shadow transition">
-
-  </div>
-</div>`,
+  demo: `<div class="tutorial-sharing"><button></button></div>`,
   explanation: "You can share your viewing path through various apps and let others view the videos you selected."
 }
 const tStart = {
@@ -81,14 +73,14 @@ const nameArray = [`${tGrid.name}`, `${tTimer.name}`, `${tHistory.name}`, `${tSh
 const demoArray = [`${tGrid.demo}`, `${tTimer.demo}`, `${tHistory.demo}`, `${tShare.demo}`, `${tStart.demo}`]
 const explanationArray = [`${tGrid.explanation}`, `${tTimer.explanation}`, `${tHistory.explanation}`, `${tShare.explanation}`, `${tStart.explanation}`]
 
-  document.querySelector(".skipper").addEventListener("click", function() {
+document.querySelector(".skipper").addEventListener("click", function() {
   document.querySelector(".intro-overlay").classList.add("hidden")
   document.querySelector(".intro").classList.add("hidden")
 })
 
 
 document.querySelector(".next").addEventListener("click", function() {
-    tutorialNumber++;
+  tutorialNumber++;
   if (tutorialNumber == 4) {
     this.textContent = "restart tutorial"
     console.log(tutorialNumber)
@@ -98,19 +90,19 @@ document.querySelector(".next").addEventListener("click", function() {
     tutorialexplained.textContent = explanationArray[`${tutorialNumber}`]
     this.setAttribute("style", "font-size:10px;");
     document.querySelector(".explorer").addEventListener("click", function() {
-    document.querySelector(".intro-overlay").classList.add("hidden")
-    document.querySelector(".intro").classList.add("hidden")
+      document.querySelector(".intro-overlay").classList.add("hidden")
+      document.querySelector(".intro").classList.add("hidden")
     })
     tutorialNumber = -1;
-  }else {
+  } else {
     console.log(tutorialNumber)
     tutorialName.textContent = nameArray[`${tutorialNumber}`]
     tutorial.textContent = ""
     tutorial.insertAdjacentHTML("beforeend", demoArray[`${tutorialNumber}`])
     tutorialexplained.textContent = explanationArray[`${tutorialNumber}`]
-    if(tutorialNumber == 1){
-    timerThing();
-    }else if(tutorialNumber == 0){
+    if (tutorialNumber == 1) {
+      timerThing();
+    } else if (tutorialNumber == 0) {
       document.querySelector(".next").setAttribute("style", "font-size:20px;");
       document.querySelector(".next").textContent = "Next >"
     }
@@ -152,24 +144,25 @@ document.querySelector(".starter").addEventListener("click", function() {
 
 
 let totalTime = 9;
-function timerThing(){
-const timeInSeconds = document.querySelector(".timeSeconds")
-setInterval(function() {
-  if (totalTime <= 0) {
-    totalTime = 10;
-    totalTime--;
-    timeInSeconds.textContent = totalTime
-    // document.querySelectorAll(".intro .displayFlex article").forEach(article => {
-    // article.setAttribute("style", "opacity:0; background-color: #fff; ")
-    // setTimeout(function() {
-    // article.setAttribute("style", "opacity:1; background: none;")
-    // }, 500)
-    // article.querySelector("p:last-of-type").textContent = "You're now looking at a new set of stills because the timer just looped"
-    // article.querySelector("p:first-of-type").textContent = "You're still able to click, filter and preview the related stills"
-    // })
-  } else {
-    totalTime--;
-    timeInSeconds.textContent = totalTime;
-  }
-}, 999);
+
+function timerThing() {
+  const timeInSeconds = document.querySelector(".timeSeconds")
+  setInterval(function() {
+    if (totalTime <= 0) {
+      totalTime = 10;
+      totalTime--;
+      timeInSeconds.textContent = totalTime
+      // document.querySelectorAll(".intro .displayFlex article").forEach(article => {
+      // article.setAttribute("style", "opacity:0; background-color: #fff; ")
+      // setTimeout(function() {
+      // article.setAttribute("style", "opacity:1; background: none;")
+      // }, 500)
+      // article.querySelector("p:last-of-type").textContent = "You're now looking at a new set of stills because the timer just looped"
+      // article.querySelector("p:first-of-type").textContent = "You're still able to click, filter and preview the related stills"
+      // })
+    } else {
+      totalTime--;
+      timeInSeconds.textContent = totalTime;
+    }
+  }, 999);
 }

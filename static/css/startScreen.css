@@ -1,12 +1,12 @@
-.intro{
-z-index: 5;
-position: absolute;
-width: 100%;
-height: 100vh;
-color: #fff;
-  }
+.intro {
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
 
-.intro-overlay{
+.intro-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,22 +14,23 @@ color: #fff;
   height: 100vh;
   background-color: #6875fb;
   background-size: cover;
-  /* opacity: .4; */
   z-index: 4;
-  /* filter: blur(31px); */
 }
-.intro h1{
+
+.intro h1 {
   text-align: center;
   font-weight: 400;
   font-size: 30px;
 }
-.intro button:hover{
-color: #6875fb;
-background-color: #fff;
-transition: .3s ease;
-cursor: pointer;
+
+.intro button:hover {
+  color: #6875fb;
+  background-color: #fff;
+  transition: .3s ease;
+  cursor: pointer;
 }
-.intro button{
+
+.intro button {
   background: none;
   border: 1px solid #fff;
   color: #fff;
@@ -39,23 +40,23 @@ cursor: pointer;
   border-radius: 4px;
 }
 
-.skipper{
+.skipper {
   position: absolute;
   right: 20px;
   top: 20px;
 }
 
-.blur{
-filter: blur(3px);
+.blur {
+  filter: blur(3px);
 }
 
-.expl-txt{
+.expl-txt {
   text-align: center;
   margin-top: 20vh;
   grid-column: 2/7;
 }
 
-.overlay-timer{
+.overlay-timer {
   border: 5px solid #fff;
   border-radius: 50%;
   width: 100px;
@@ -65,35 +66,37 @@ filter: blur(3px);
   text-align: center;
 }
 
-.overlay-timer p span:first-of-type{
-font-size: 30px;
+.overlay-timer p span:first-of-type {
+  font-size: 30px;
 }
-.overlay-timer p:last-of-type{
+
+.overlay-timer p:last-of-type {
   left: 32%;
   top: 5%;
 }
-.overlay-timer p span:last-of-type{
+
+.overlay-timer p span:last-of-type {
   font-size: 10px;
 }
-.overlay-timer p{
+
+.overlay-timer p {
   padding: 10px;
   position: absolute;
   font-size: 12px;
 }
 
-.testGrid{
+.testGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
 
-
-.PreviewCont{
+.PreviewCont {
   color: #000;
   margin-top: 30px;
   position: relative;
 }
 
-.PreviewCont p{
+.PreviewCont p {
   position: absolute;
   background-color: #fff;
   color: #6875fb;
@@ -103,19 +106,18 @@ font-size: 30px;
   line-height: 1;
 }
 
-.preview{
+.preview {
   height: 100px;
   background-color: #eee;
   width: 90%;
   margin: auto;
   cursor: pointer;
-  background-image: url(https://www.shareicon.net/download/2015/12/05/682661_multimedia.svg);
   background-size: 10%;
   background-repeat: no-repeat;
   background-position: 50%;
 }
 
-.intro form{
+.intro form {
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -124,7 +126,7 @@ font-size: 30px;
   margin: auto;
 }
 
-.testHistory{
+.testHistory {
   background-color: #eee;
   max-width: 90%;
   width: 90%;
@@ -137,15 +139,13 @@ font-size: 30px;
   position: relative;
 }
 
-
-.testHistory article{
+.testHistory article {
   height: 70px;
   width: 60%;
   margin: auto;
   border: 1px solid #4e4e4e;
   margin-top: 6px;
 }
-
 
 .testHistory::-webkit-scrollbar {
   width: 7px;
@@ -160,16 +160,17 @@ font-size: 30px;
   background-color: #c1deff;
 }
 
-.intro .displayFlex p{
+.intro .displayFlex p {
   max-width: 70%;
 }
-.intro .displayFlex{
+
+.intro .displayFlex {
   justify-content: space-between;
   max-width: 50%;
   margin: auto;
 }
 
-.intro .displayFlex article button{
+.intro .displayFlex article button {
   position: absolute;
   top: 0;
   right: 0;
@@ -181,15 +182,18 @@ font-size: 30px;
   transition: .3s ease;
   font-size: 10px;
 }
-.intro .displayFlex article:hover button{
-opacity: 1;
+
+.intro .displayFlex article:hover button {
+  opacity: 1;
 }
-.intro .displayFlex article:hover{
+
+.intro .displayFlex article:hover {
   color: #fff;
   transition: .3s ease;
   cursor: pointer;
 }
-.intro .displayFlex article{
+
+.intro .displayFlex article {
   border: 1px solid #fff;
   width: 33%;
   height: 32%;
@@ -202,45 +206,50 @@ opacity: 1;
   font-size: 13px;
 }
 
-.intro h3{
+.intro h3 {
   text-align: center;
   margin: auto;
 }
 
-.explanation-container h3{
+.explanation-container h3 {
   margin-bottom: 20px;
 }
 
-
-
-.tutorial-prevBtn{
+.tutorial-prevBtn {
   z-index: 5;
 }
+
 .tutorial-prevBtn:active,
 .tutorial-prevBtn:focus,
-.tutorial-prevBtn:hover{
+.tutorial-prevBtn:hover {
   text-decoration: underline;
   pointer-events: none
 }
 
-
-.explanation-container{
+.explanation-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.tutorial-explanation{
-text-align: center;
-max-width: 50%;
+.tutorial-explanation {
+  text-align: center;
+  max-width: 50%;
 }
 
-.next{
-margin: auto;
-display: block;
+.next {
+  margin: auto;
+  display: block;
 }
 
-.hidden > *{
-display: none;
+.tutorial-sharing button {
+  padding: 40px 60px;
+  background-image: url(../images/icons/share-icon_color.svg);
+  background-repeat: no-repeat;
+  background-position: 110%;
+}
+
+.hidden>* {
+  display: none;
 }
