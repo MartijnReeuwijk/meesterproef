@@ -19,7 +19,6 @@ function init () {
   thumbnailsEventListener()
   if (document.querySelector('.history-container')) {
     document.querySelector('.history-container').scrollTop = 0
-
   }
 }
 
