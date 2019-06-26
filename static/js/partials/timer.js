@@ -7,10 +7,10 @@ let timerVar
 
 function fade (time) {
   setTimeout(() => {
-    const addFadeout = document.getElementsByClassName('mainpageImage');
+    const addFadeout = document.getElementsByClassName('mainpageImage')
     const addFadeoutArray = Array.from(addFadeout)
     addFadeoutArray.forEach(elem => {
-      elem.classList.add("fadeOut")
+      elem.classList.add('fadeOut')
     })
   }, time)
 }

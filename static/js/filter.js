@@ -19,7 +19,7 @@ async function renderFilterdata () {
 
   thumbnailsEventListener()
 
-  timer.related(filterdDataId, 5000)
+  timer.related(filterdDataId, 10000)
 }
 const input = document.querySelectorAll('form input')
 input.forEach(elem => {
