@@ -3,8 +3,11 @@ function toggleDetailPage () {
   document.getElementsByClassName('shadowOverlay')[0].classList.toggle('displayNone')
   document.getElementsByClassName('videoFile')[0].pause()
 }
-document.getElementsByClassName('closeDetail')[0].addEventListener('click', toggleDetailPage)
-document.getElementsByClassName('shadowOverlay')[0].addEventListener('click', toggleDetailPage)
+if (document.getElementsByClassName('closeDetail')[0]) {
+  document.getElementsByClassName('closeDetail')[0].addEventListener('click', toggleDetailPage)
+  document.getElementsByClassName('shadowOverlay')[0].addEventListener('click', toggleDetailPage)
+}
+
 
 export function addPreviewListeners () {
   const prev = Array.from(document.getElementsByClassName('prevButton'))
@@ -17,13 +20,26 @@ export function addPreviewListeners () {
   })
 }
 
-// title
-// author
-// co
-// length
-// date
-// directed
+
+//
+// Dit is helemaal niet cool maar heb geen tijd om het goed tefixen
+//
+if (document.getElementsByClassName('endImage')) {
+  function addEndimageListeners () {
+    const endImage = Array.from(document.getElementsByClassName('endImage'))
+    endImage.forEach(image => {
+      image.addEventListener('click', function () {
+      makeDetailPage(this)
+      })
+    })
+  }
+  addEndimageListeners ()
+}
+
+
+
 async function makeDetailPage (button) {
+  console.log(button.dataset.image);
   const response = await getDetailData(button.dataset.image)
   const data = response.GetRecord.record.metadata['oai_dc:dc']
   const newData = {

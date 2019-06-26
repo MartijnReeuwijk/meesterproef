@@ -1,9 +1,9 @@
 .thumbnailHolster{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 60%;
-  margin: auto;
-  grid-gap: 10px;
+  max-width: 80%;
+  margin: 5px auto;
+  grid-gap: 5px;
   max-height: 30vh;
   overflow-y: scroll;
   background-color: #000;
@@ -11,9 +11,11 @@
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
-
+.thumbnailHolster::-webkit-scrollbar {
+    display: none;
+}
 .nowWatching{
-  width: 60%;
+  width: 80%;
   margin: auto;
   display: flex;
   max-height: 55vh;
@@ -61,7 +63,7 @@
 .metaData{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  max-width: 60%;
+  max-width: 80%;
   margin: auto;
   background-color: #000;
   border-bottom: 4px solid #6875fb;
