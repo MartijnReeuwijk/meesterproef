@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon",
-    "check:js": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\" && git status",
+    "build:js": "terser static/js/index.js -c -m -o static/js/index.min.js && terser static/js/detail.js -c -m -o static/js/detail.min.js && terser static/js/filter.js -c -m -o static/js/filter.min.js && terser static/js/history.js -c -m -o static/js/history.min.js && terser static/js/intro.js -c -m -o static/js/intro.min.js && terser static/js/share.js -c -m -o static/js/share.min.js && terser static/js/partials/data.js -c -m -o static/js/partials/data.min.js && terser static/js/partials/element.js -c -m -o static/js/partials/element.min.js && terser static/js/partials/preview.js -c -m -o static/js/partials/preview.min.js && terser static/js/partials/render.js -c -m -o static/js/partials/render.min.js && terser static/js/partials/startScreen.js -c -m -o static/js/partials/startScreen.min.js && terser static/js/partials/timer.js -c -m -o static/js/partials/timer.min.js && terser static/js/partials/url.js -c -m -o static/js/partials/url.min.js",
+    "build:css": "postcss static/css/attribute.css > static/css/attribute.min.css && postcss static/css/clock.css > static/css/clock.min.css && postcss static/css/footer.css > static/css/footer.min.css && postcss static/css/keyframes.css > static/css/keyframes.min.css && postcss static/css/master.css > static/css/master.min.css && postcss static/css/nav.css > static/css/nav.min.css && postcss static/css/overlay.css > static/css/overlay.min.css && postcss static/css/share.css > static/css/share.min.css && postcss static/css/startScreen.css > static/css/startScreen.min.css",
+    "check:js": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\"",
+    "build": "npm run check:js && npm run build:js && npm run build:css && git status",
     "setupdb": "node partials/setupdb.js"
   },
   "repository": {
