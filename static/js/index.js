@@ -15,7 +15,7 @@ export function thumbnailsEventListener () {
 }
 
 function init () {
-  timer.start(5000)
+  timer.start(10000)
   thumbnailsEventListener()
   if (document.querySelector('.history-container')) {
     document.querySelector('.history-container').scrollTop = 0
