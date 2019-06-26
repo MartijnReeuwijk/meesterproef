@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon",
-    "build": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\" && git status",
+    "check:js": "standard --fix \"static/js/*.js\" && standard --fix \"partials/*.js\" && standard --fix \"index.js\" && git status",
     "setupdb": "node partials/setupdb.js"
   },
   "repository": {
@@ -37,7 +37,10 @@
     "xml2json": "^0.11.2"
   },
   "devDependencies": {
-    "standard": "^12.0.1"
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^6.1.2",
+    "standard": "^12.0.1",
+    "terser": "^4.0.0"
   },
   "nodemonConfig": {
     "ignore": [
