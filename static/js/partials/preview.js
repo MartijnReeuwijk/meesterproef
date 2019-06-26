@@ -39,7 +39,6 @@ if (document.getElementsByClassName('endImage')) {
 
 
 async function makeDetailPage (button) {
-  console.log(button.dataset.image);
   const response = await getDetailData(button.dataset.image)
   const data = response.GetRecord.record.metadata['oai_dc:dc']
   const newData = {

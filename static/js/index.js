@@ -21,5 +21,6 @@ function init () {
     document.querySelector('.history-container').scrollTop = 0
   }
 }
-
-init()
+if (!window.location.href.includes('/end')) {
+  init()
+}
