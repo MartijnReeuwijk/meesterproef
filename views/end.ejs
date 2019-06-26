@@ -1,7 +1,18 @@
 <%- include('./partials/head') -%>
-
+<a class="backLink" href="/">< Back</a>
+<video class="nowWatching" controls>
+  <source src="movie.mp4" type="video/mp4">
+</video>
+<section class="metaData">
+  <h3>Title <span></span></h3>
+  <p>Maker <span></span></p>
+  <p>Description <span></span></p>
+</section>
+<div class="thumbnailHolster">
 <% images.forEach(image => { %>
-  <img src="../images/thumbnails/thumbnails_large/<%= image %>/<%= image %>_0.png" alt="">
+  <img class="transition" src="../images/thumbnails/thumbnails_large/<%= image %>/<%= image %>_0.png" alt="">
 <% }) %>
+</div>
 
+<link rel="stylesheet" href="/css/endgame.css">
 <%- include('./partials/footer') -%>
