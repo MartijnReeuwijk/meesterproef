@@ -1,19 +1,20 @@
 <%- include('./partials/head'); -%>
+<%- include('./partials/startScreen'); -%>
+<%- include('./partials/detailModal'); -%>
 
-<main class="displayFlex">
 
-
-  <% for(var i = 0;  i < 9; i++) { %>
-    <div class="mainpageImage previewImage transition">
-      <!-- Test data but the path will be the same just change the number to the data Var -->
-      <!-- The _0.png must stay so the the app will alwaya get the first one -->
-      <img src="../images/thumbnails/thumbnails_large/1000452/1000452_0.png" alt="">
-    <!-- <img src="../images/thumbnails/thumbnails_large/`<%=clips[i]%>`/<%=clips[i]%>_0.png" alt=""> -->
-
-<!-- ${clips[1]}/${clips[1]} -->
-    </div>
+<div class="bigAssContainer">
+  <main class="fullMainIndex displayFlex">
+  <% for(var i = 0;  i < clips.length; i++) { %>
+    <button name="foto button" class="mainpageImage previewImage transition"  data-image="<%= clips[i] %>" data-shot="0">
+      <img src="../images/thumbnails/thumbnails_large/<%=clips[i]%>/<%=clips[i]%>_0.png" alt="">
+    </button>
 <% } %>
+  </main>
 
-</main>
+</div>
 
+<script src="/sw-register.js" type="text/javascript"></script>
+
+<script src="/js/intro.js"></script>
 <%- include('./partials/footer'); -%>

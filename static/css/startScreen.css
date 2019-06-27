@@ -1,0 +1,257 @@
+.intro {
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  overflow: scroll;
+}
+
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #6875fb;
+  background-size: cover;
+  z-index: 4;
+}
+
+.intro h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.intro button:hover {
+  color: #6875fb;
+  background-color: #fff;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.intro button {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.skipper {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.expl-txt {
+  text-align: center;
+  margin-top: 20vh;
+  grid-column: 2/7;
+}
+
+.overlay-timer {
+  border: 5px solid #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.overlay-timer p span:first-of-type {
+  font-size: 30px;
+}
+
+.overlay-timer p:last-of-type {
+  left: 32%;
+  top: 5%;
+}
+
+.overlay-timer p span:last-of-type {
+  font-size: 10px;
+}
+
+.overlay-timer p {
+  padding: 10px;
+  position: absolute;
+  font-size: 12px;
+}
+
+.testGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.PreviewCont {
+  color: #000;
+  margin-top: 30px;
+  position: relative;
+}
+
+.PreviewCont p {
+  position: absolute;
+  background-color: #fff;
+  color: #6875fb;
+  padding: 0px 3px;
+  border-radius: 4px;
+  max-width: 190px;
+  line-height: 1;
+}
+
+.preview {
+  height: 100px;
+  background-color: #eee;
+  width: 90%;
+  margin: auto;
+  cursor: pointer;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.intro form {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  max-width: 90%;
+  margin: auto;
+}
+
+.testHistory {
+  background-color: #eee;
+  max-width: 90%;
+  width: 90%;
+  width: 200px;
+  margin: auto;
+  margin-top: 5px;
+  overflow-y: scroll;
+  max-height: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.testHistory article {
+  height: 70px;
+  width: 60%;
+  margin: auto;
+  border: 1px solid #4e4e4e;
+  margin-top: 6px;
+}
+
+.testHistory::-webkit-scrollbar {
+  width: 7px;
+}
+
+.testHistory::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.testHistory::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #c1deff;
+}
+
+.intro .displayFlex p {
+  max-width: 70%;
+}
+
+.intro .displayFlex {
+  max-width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.intro .displayFlex article button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 5px;
+  color: #6875fb;
+  border-top-right-radius: 0px;
+  opacity: 0;
+  transition: .3s ease;
+  font-size: 10px;
+}
+
+.intro .displayFlex article:hover button {
+  opacity: 1;
+}
+
+.intro .displayFlex article:hover {
+  color: #fff;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.intro .displayFlex article {
+  border: 1px solid #fff;
+  /* width: 33%;
+  height: 32%; */
+  display: flex;
+  color: #6875fb;
+  align-items: center;
+  flex-direction: column-reverse;
+  position: relative;
+  text-align: center;
+  font-size: 13px;
+}
+
+.intro h3 {
+  text-align: center;
+  margin: auto;
+}
+
+.explanation-container h3 {
+  margin-bottom: 20px;
+}
+
+.tutorial-prevBtn {
+  z-index: 5;
+}
+
+.tutorial-prevBtn:active,
+.tutorial-prevBtn:focus,
+.tutorial-prevBtn:hover {
+  text-decoration: underline;
+  pointer-events: none
+}
+
+.explanation-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tutorial-explanation {
+  text-align: center;
+  max-width: 70%;
+}
+
+.next {
+  margin: auto;
+  display: block;
+}
+
+.tutorial-sharing button {
+  padding: 40px 60px;
+  background-image: url(../images/icons/share-icon_color.svg);
+  background-repeat: no-repeat;
+  background-position: 110%;
+}
+
+.hidden>* {
+  display: none;
+}

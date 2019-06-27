@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="msapplication-TileColor" content="#00a300">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Semias Datavisual and Google AI's intergration" />
+</head>
+
+<body>
+
+<style>
+  .displayFlex {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .errorPage {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .errorPage h1 {
+    color: red;
+  }
+  .errorFlex{
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/error.gif");
+  }
+
+</style>
+
+<main class="displayFlex errorFlex">
+  <div class="errorPage shadows ">
+    <h1>Offline</h1>
+    <p>Er is geen verbinding mogelijk met het internet</p>
+    <a href="/" onclick="event.preventDefault(); window.history.back();">Go back</a>
+  </div>
+</main>
+
+</body>
+</html>

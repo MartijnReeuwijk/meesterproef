@@ -1,0 +1,18 @@
+<%= JSON.stringify(data) %>
+
+<form action="/share" method="post">
+  <label for="customUrl">Custom url</label>
+  <input id="customUrl" type="text" name="customUrl" required>
+
+  <input id="currentUrl" type="text" name="currentUrl" required>
+
+  <input type="submit">
+</form>
+
+<script>
+  const urlParts = window.location.href.split('/')
+  const imgSequence = urlParts[urlParts.length - 1]
+  const input = document.getElementById('currentUrl')
+
+  input.value = imgSequence
+</script>

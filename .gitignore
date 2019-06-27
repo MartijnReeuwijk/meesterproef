@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+thumbnails
+.DS_Store
+/static/semia_data/SEMIA_search_results.json
+.env
+config.json

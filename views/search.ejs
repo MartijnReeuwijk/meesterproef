@@ -1,0 +1,65 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/detailModal'); -%>
+
+<div class="bigAssContainer">
+
+  <aside class="">
+    <div class="current-pick">
+      <h3>Current video</h3>
+      <div class="video-placeholder">
+        <img src="../images/thumbnails/thumbnails_large/<%= prevImg %>/<%= prevImg %>_0.png" data-image="<%= prevImg %>" data-shot="0" alt="">
+      </div>
+
+      <form class="" action="index.html" method="post">
+
+        <legend>Filter related</legend>
+        <div>
+          <input id="filter-kleur" type="radio" name="filter" value="colour">
+          <label for="filter-kleur" title="Filter the images on colour">Color</label>
+          <input id="filter-vorm" type="radio" name="filter" value="shape">
+          <label for="filter-vorm" title="Filter the images on shape">Shape</label>
+          <input id="filter-beweging" type="radio" name="filter" value="movement">
+          <label for="filter-beweging" title="Filter the images on movement">Movement</label>
+          <input id="filter-textuur" type="radio" name="filter" value="clutter">
+          <label for="filter-textuur" title="Filter the images on complexity">Complexity</label>
+        </div>
+
+      </form>
+
+    </div>
+    <h3>History</h3>
+    <div class="history-container borderRadius">
+      <% path.forEach((img, i) => { %>
+        <img src="../images/thumbnails/thumbnails_large/<%= img %>/<%= img %>_0.png" data-image="<%= img %>" data-shot="0" data-number="<%= i %>" alt="">
+      <% }) %>
+    </div>
+    <%- include('./partials/shareHolder'); -%>
+    <div class="aHolder">
+
+
+    <a class="homebutton borderRadius shadows transition" href="<%= `/end/${path.join('-')}` %>">Stop</a>
+    <a class="homebutton borderRadius shadows transition" href="/">Reset</a>
+        </div>
+  </aside>
+
+
+  <main class="displayFlex">
+
+    <!-- <h2>Related images</h2> -->
+    <% newImgs.forEach(img => { %>
+
+    <div class="mainpageImage">
+      <button name="button"class="prevButton borderRadius" data-image="<%= img.split('_')[0] %>" type="button">Preview</button>
+      <button name="foto button" class="previewImage previewImageSearch fade borderRadius transition" data-image="<%= img.split('_')[0] %>" data-shot="0">
+        <img src="../images/thumbnails/thumbnails_large/<%=img.split('_')[0]%>/<%=img.split('_')[0]%>_0.png" alt="">
+      </button>
+    </div>
+    <% }) %>
+
+  </main>
+
+  <script src="/js/filter.js" type="module" charset="utf-8"></script>
+  <script src="/js/history.js" async charset="utf-8"></script>
+  <script src="/js/partials/preview.js" type="module" charset="utf-8"></script>
+
+  <%- include('./partials/footer'); -%>
