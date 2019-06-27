@@ -378,7 +378,9 @@ aside {
   flex-direction: column-reverse;
   width: 100%;
   max-width: 300px;
+
   min-height:150px;
+
   background-color: #e0e0e0;
 }
 .history-container img {
