@@ -42,7 +42,7 @@ node index.js
 * [The problem](#the-problem)
 * [Solution](#solution)
   + [First version](#first-version)
-<!--  + [Filter data design](#filter-data-design) -->
+  + [Filter data design](#filter-data-design)
   + [Why Timer](#why-timer)
   + [Why 9 images](#why-9-images)
   + [Why History](#why-history)
@@ -91,10 +91,8 @@ We made an application which is used to navigate through a film database in an e
 
 ![image](bin/second-screen2.png)
 
-<!-- ### Filter data design
-(Vertel hier over de 2 versies waar we aan hadden gedacht de 100% breed en de 50%)
-Iemand moet het hierr aanvullen want ik dacht dat we het juist onder elkaar zouden doen want dan ziet het er uit alsof het is verbonden met de current-slection img… maar das weer werk.
-We decided to give the filter a rounded border because I’m not really sure and would have given it no border and would have put the buttons directly under the current selected image and vertically aligned them under each other to seperate them better. But the team decided that was a bad idea so we did the rounded border anyways. It does save space now which is definitely nice seeing as the control panel can look quite crowded. -->
+### Filter data design
+Initially we had two designs of the filter, one where the buttons were under one-another and ik took up plenty space and the second option (the one we picked) where we held the filter buttons in a container with a two-by-two grid. In the second version the filter took up less space and made the control panel look and feel a lot less full/chaotic. We tested both versions with peers and found that the second version to be equally understood and cleared a lot of space for other features and information.
 
 ### Why Timer
 Our application makes use of the huge dataset and we wanted to make/allow the user to navigate through it in a way where they have input but are generally served what the application/data suggests. The user can only “search” by choosing a shot they’d like to see more of/are interested in. We chose to have an app where you could loop through the data at a speed that would allow the user to view just how vast the data is and actually have them interact. To do this we thought it would be best to have the data loop at an interval, make the user view the data at a speed that makes it possible to absorb the data in a second and then serve them more. In the first iteration we had the interval every five seconds which fires a large number of stimuli at the user. Users found the five second interval too short and were very overwhelmed by the fact that they had to view all images in that time and make a choice. So we douled the time and added an animation so the images don’t flash the whole time, making it more pleasant to use and preventing giving the users a sense of urgency.
