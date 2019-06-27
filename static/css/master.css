@@ -382,7 +382,7 @@ aside {
   flex-direction: column-reverse;
   width: 100%;
   max-width: 300px;
-  min-height:150px;
+  min-height:100px;
   /* margin: auto; */
   background-color: #e0e0e0;
 }
