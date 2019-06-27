@@ -62,7 +62,13 @@ In a collaboration between UvA, HvA, Eye, Beeld en Geluid and Studio Louter exis
 Developing an interface where movie footage can be searched based on colour, shape, movement and visual complexity. The interface should enable the user to explore content from a large dataset.
 
 ## The users
-The people that would use this interface are film researchers and artists. In a video shown to us by Maaike and Frank **ADD HERE**
+In a video shown to us by Maaike and Frank, we were introduced by the users we’ll exclusively make the interface for. These users are brought together by a collective of Eye Film Museum. As you can guess, they all have one thing in common: they know about film. And by know, we mean fragments of film footage does something more to them than it does to us regular people.
+
+The users can be described as film scientists and artists. They know about different movements in film culture, about what colour and grids mean in shots and can give meaning to something that would leave the rest of us guessing. For them, it’s important to search something on, for instance, shape. Since it’s really hard to type out in words why a film still is interesting, we’ll let them search without words.
+
+From the perspective of a researcher or scientist, not only the result is interesting. The path you took, the way you got where you are now, is just as interesting. Maybe even more. This is why we built a feature that captures all images the user clicked on in an “history” tab. By scrolling through the images in this history tab, the user can return to a previous selected image and from there on can change the path into a next one.
+
+We tested with 5 different people at Eye, and got really different results from each one. The thing that stood out, is that all of them used the interface in a way that was amusing to them. One tried to get only black images by filtering on movement, another tried to get all similar texts by filtering on colour. It’s obvious that these people don’t look at film stills the way we do, so they need a search engine that’s different from the ones we’ve known until now.
 
 ## The problem
 Semia representatives approached us and asked us to make an app with which one could navigate through the immense data set they provided. The dataset provided was extremely big and impossible to navigate through, it was simply too rich of a source to have a conventional app make use of it in a meaningful and interesting/fun way.
