@@ -104,6 +104,9 @@ The second reason is based on research we conducted on our target audience, afte
 
 ### Why History
 From the start we thought it would be interesting if we could display the path a user had traversed to reach the current selection and which filters where applied to reach that result. This could be interesting because we had imagined that the users would then be able to scroll back in their path and not only see which selections they had made but also be able to select a previously selected video and change the “future” path by making different choices/clicking different shots. In practice displaying which filters had been applied in the path proved to be not only extremely difficult to achieve but also impossible within the time we had. We decided to implement the core of the path in the app to allow the users to create a timeline because how you got to your current destination is also interesting/even more interesting than simply showing the result, seeing as thats what the entire dataset is about.
+To support our use of the history feature this following quote: “For researchers and artists alike the true treasure isn’t the end result but the friends we made along the way”
+- Captain Jack
+
 
 ## Product owner feedback
 In the creation process of this app we worked closely to the product owner and the Eye Amsterdam. Every week we had a meeting and a test session with the owners. This made sure we are always on the right track with the product and if the created designs make any sense at all. In the days between the meeting we worked on features for the app or improve upon existing features.
