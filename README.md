@@ -33,7 +33,7 @@ node index.js
 ```
 
 # Explorative interface for Semia
-![image]()
+![image](bin/second-screen.png)
 
 ## Table of contents
 * [Debriefing](#debriefing)
@@ -66,7 +66,7 @@ When then proceeded to create a [project board on the github repo](https://githu
 
 ### first version
 #### result of first concepting session
-![image]()
+![image](bin/sketch.png)
 
 #### short pitch animation
 ### first version
@@ -74,7 +74,7 @@ In week two we made the first clickable version
 
 We made an application which is used to navigate through a film database in an explorative manner. It is targeted towards researchers and artists working with film. The application allows the user to view shots related to one another based on color, movement within the shot, shapes recognised in each shot and the visual complexity of each shot. The user is able to put together a path of frames relating to one another in many interesting ways, creating link where previously there weren't any.
 
-![image]()
+![image](bin/second-screen2.png)
 
 ### Filter data design
 (Vertel hier over de 2 versies waar we aan hadden gedacht de 100% breed en de 50%)
@@ -391,7 +391,7 @@ For the image loading, we first render 9 images server side. After every 10 seco
 
 When the user goes to the second page the server renders 9 related images. After every 10 seconds the front-end sends a request to the server requesting all the related images so it can pick 9 random but related images. It also enables the front-end to filter on color, shape movement and visual complexity.
 
-Sources
+## Sources
 Epic gamer moment
 - Foli, T. D. (ter perse). Pro-gamer moments and what they mean. https://www.Wikepedia.org/epic%20gamer&20moments%20and%20what%20they%20mean
 
